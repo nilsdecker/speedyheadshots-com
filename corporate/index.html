@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corporate Headshots Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Professional corporate headshots in Toronto. We come to your office — no travel, no disruption. Teams of 4 to 200+. 24-hour turnaround guaranteed.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/corporate/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px,8vw,96px) var(--gutter);
+      padding-right: clamp(24px,4vw,64px);
+    }
+    .hero-copy h1 { margin-top: 14px; }
+    .hero-copy h1 em { font-style: italic; color: var(--warm); }
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 17px;
+      color: var(--mid);
+      max-width: 420px;
+      line-height: 1.7;
+    }
+    .hero-proof {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .proof-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      color: var(--mid);
+    }
+    .proof-pill::before {
+      content: '✓';
+      color: var(--warm);
+      font-size: 11px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* ── How it works ─────────────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+    .step-card {
+      background: var(--white);
+      padding: 40px 32px;
+    }
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--cream);
+    }
+    .step-card h3 { font-size: 22px; margin: 12px 0 10px; }
+    .step-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+    /* ── Industries ───────────────────────────────────────── */
+    .industries-section { background: var(--black); color: var(--white); }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.08);
+      margin-top: 48px;
+    }
+    .industry-card {
+      background: var(--black);
+      padding: 36px 28px;
+      transition: background .2s;
+    }
+    .industry-card:hover { background: #1a1a1a; }
+    .industry-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .industry-card h3 {
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .industry-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.7;
+    }
+    .industry-card ul {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .industry-card ul li {
+      font-size: 13px;
+      color: rgba(255,255,255,.4);
+      padding-left: 14px;
+      position: relative;
+    }
+    .industry-card ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--warm);
+      font-size: 11px;
+    }
+
+    /* ── Who books ────────────────────────────────────────── */
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .who-card {
+      padding: 48px 40px;
+      border: 1px solid var(--border);
+    }
+    .who-card.featured { background: var(--cream); }
+    .who-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      background: var(--warm);
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .who-card h3 { font-size: 28px; margin-bottom: 14px; }
+    .who-card p { font-size: 15px; color: var(--mid); line-height: 1.7; }
+    .who-list {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .who-list li {
+      font-size: 14px;
+      color: var(--mid);
+      padding-left: 18px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .who-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--warm);
+      font-size: 12px;
+    }
+
+    /* ── Logistics strip ──────────────────────────────────── */
+    .logistics-strip {
+      background: var(--warm);
+      color: var(--white);
+      padding: clamp(32px,5vw,56px) 0;
+    }
+    .logistics-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .logistics-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-align: center;
+      flex: 1;
+      min-width: 120px;
+    }
+    .logistics-item strong {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .logistics-item span {
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .75;
+    }
+    .logistics-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,.25);
+      flex-shrink: 0;
+    }
+
+    /* ── Pricing ──────────────────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      border: 1.5px solid var(--border);
+      padding: 36px 28px;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -1px; right: 24px;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+    .pricing-tier {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .pricing-tier { color: rgba(255,255,255,.45); }
+    .pricing-size { font-size: 13px; color: var(--mid); }
+    .pricing-card.featured .pricing-size { color: rgba(255,255,255,.45); }
+    .pricing-price {
+      font-family: var(--font-serif);
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1;
+      margin: 20px 0 4px;
+    }
+    .pricing-unit { font-size: 12px; color: var(--mid); }
+    .pricing-card.featured .pricing-unit { color: rgba(255,255,255,.45); }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 24px 0;
+    }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,.12); }
+    .pricing-includes { display: flex; flex-direction: column; gap: 9px; }
+    .pricing-includes li {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.45;
+      padding-left: 16px;
+      position: relative;
+    }
+    .pricing-card.featured .pricing-includes li { color: rgba(255,255,255,.6); }
+    .pricing-includes li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--warm);
+      font-size: 10px;
+    }
+    .pricing-card .btn {
+      width: 100%;
+      justify-content: center;
+      margin-top: 28px;
+    }
+    .pricing-card.featured .btn {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+    .pricing-card.featured .btn:hover {
+      background: var(--warm);
+      border-color: var(--warm);
+      color: var(--white);
+    }
+    .pricing-note {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--mid);
+      text-align: center;
+    }
+
+    /* ── Testimonials ─────────────────────────────────────── */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 36px 32px;
+      border: 1px solid var(--border);
+    }
+    .testimonial-stars { display: flex; gap: 3px; margin-bottom: 20px; }
+    .testimonial-stars span { font-size: 14px; color: var(--warm); }
+    .testimonial-card blockquote {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .testimonial-credit {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .testimonial-credit strong {
+      display: block;
+      font-weight: 600;
+      color: var(--black);
+      font-size: 13px;
+      margin-bottom: 2px;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 400;
+      color: var(--black);
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px; height: 24px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--mid);
+      transition: transform .25s var(--ease), background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--black); color: var(--white); border-color: var(--black); }
+    .faq-answer {
+      display: none;
+      padding: 0 0 22px;
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA Banner ───────────────────────────────────────── */
+    .cta-banner {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: clamp(64px,10vw,112px) var(--gutter);
+    }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.5); margin-top: 16px; font-size: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .cta-actions .btn { padding: 14px 32px; }
+    .cta-actions .btn-warm { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .cta-actions .btn-warm:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .cta-actions .btn-ghost { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .cta-actions .btn-ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .industries-grid { grid-template-columns: 1fr 1fr; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { height: 55vw; min-height: 300px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .industries-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .logistics-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero" style="padding:0;border-top:none;">
+      <div class="hero-copy">
+        <span class="eyebrow">Corporate Headshots Toronto</span>
+        <h1>We come<br>to <em>your office.</em></h1>
+        <p class="hero-sub">No travel, no disruption to your day. We set up a full portable studio at your location and photograph your entire team in a single morning — retouched images back within 24 hours.</p>
+        <div class="hero-proof">
+          <span class="proof-pill">We come to you</span>
+          <span class="proof-pill">24h turnaround</span>
+          <span class="proof-pill">Teams of 4–200+</span>
+          <span class="proof-pill">~20 min per person</span>
+        </div>
+        <div class="hero-actions">
+          <a href="mailto:hi@speedyheadshots.com?subject=Corporate%20Headshot%20Enquiry" class="btn btn-fill">Get a Quote</a>
+          <a href="#pricing" class="btn">See Team Rates</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://cloud-1de12d.becdn.net/media/original/wp-6ed1f2792b2b2fada5205ddb6103cb2b/image.jpg"
+          alt="Corporate headshot session — SpeedyHeadshots Toronto"
+          loading="eager"
+        >
+      </div>
+    </section>
+
+    <!-- ── Logistics strip ────────────────────────────────── -->
+    <div class="logistics-strip">
+      <div class="container">
+        <div class="logistics-inner">
+          <div class="logistics-item">
+            <strong>4–200+</strong>
+            <span>Team size</span>
+          </div>
+          <div class="logistics-divider"></div>
+          <div class="logistics-item">
+            <strong>~20 min</strong>
+            <span>Per person</span>
+          </div>
+          <div class="logistics-divider"></div>
+          <div class="logistics-item">
+            <strong>24h</strong>
+            <span>Delivery</span>
+          </div>
+          <div class="logistics-divider"></div>
+          <div class="logistics-item">
+            <strong>$0</strong>
+            <span>Travel fee (Toronto)</span>
+          </div>
+          <div class="logistics-divider"></div>
+          <div class="logistics-item">
+            <strong>61MP</strong>
+            <span>Sony full-frame</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── How it works ───────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="mt-16" style="max-width:520px">Three steps.<br><em class="serif" style="font-style:italic">Zero disruption.</em></h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Book & plan</h3>
+            <p>Email us the headcount, preferred date, and office address. We'll confirm within a few hours and send a simple brief for your team — what to wear, what to expect, how long to block off in their calendar.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>We set up at your office</h3>
+            <p>We arrive 30 minutes early and set up a full professional studio in a spare meeting room or lobby. Lights, backdrop, tethered laptop for live preview. Your team walks in one at a time — no one needs to leave the building.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>Images delivered in 24h</h3>
+            <p>Every team member gets a private Google Drive link with their retouched image in web-optimized and full hi-res formats. Organized by person. Ready to upload to LinkedIn, your website, or your CMS the same day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Industries ──────────────────────────────────────── -->
+    <section class="industries-section">
+      <div class="container">
+        <span class="eyebrow" style="color:rgba(255,255,255,.4)">Who We Work With</span>
+        <h2 class="mt-16" style="color:var(--white);max-width:480px">Built for<br><em class="serif" style="font-style:italic;color:var(--warm)">serious businesses.</em></h2>
+        <div class="industries-grid">
+          <div class="industry-card">
+            <span class="industry-icon">🏦</span>
+            <h3>Finance & Banking</h3>
+            <p>First impressions carry real weight in financial services. Consistent, professional headshots across your advisory, trading, and leadership teams signal credibility before a word is spoken.</p>
+            <ul>
+              <li>Investment banks & wealth managers</li>
+              <li>Insurance & brokerage firms</li>
+              <li>Accounting & audit teams</li>
+              <li>FinTech companies</li>
+            </ul>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon">💻</span>
+            <h3>Tech & Startups</h3>
+            <p>Investors, clients, and recruits look your team up before they meet you. A cohesive set of headshots on your About page is one of the simplest things you can do for your brand.</p>
+            <ul>
+              <li>SaaS & software companies</li>
+              <li>Startups raising or pitching</li>
+              <li>Agency & consulting teams</li>
+              <li>Remote-first companies onsite</li>
+            </ul>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon">🏢</span>
+            <h3>Real Estate</h3>
+            <p>Your face is your brand. Agents and brokers live and die by their personal image — on listings, yard signs, business cards, and portals. We've shot individual agents and full brokerages.</p>
+            <ul>
+              <li>Individual agents & realtors</li>
+              <li>Brokerage teams</li>
+              <li>Property management firms</li>
+              <li>Commercial real estate</li>
+            </ul>
+          </div>
+          <div class="industry-card">
+            <span class="industry-icon">⚖️</span>
+            <h3>Legal & Professional</h3>
+            <p>Law firms, consultancies, and medical practices depend on trust. Polished, consistent headshots across your partnership and associate levels project exactly that.</p>
+            <ul>
+              <li>Law firms & chambers</li>
+              <li>Management consultancies</li>
+              <li>Medical & dental practices</li>
+              <li>PR & communications firms</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Who books ───────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Who Reaches Out</span>
+        <h2 class="mt-16">We work with the person<br><em class="serif" style="font-style:italic">driving the decision.</em></h2>
+        <div class="who-grid">
+          <div class="who-card featured">
+            <span class="who-tag">Most common</span>
+            <h3>Marketing &<br>HR Directors</h3>
+            <p>You're managing a rebrand, a new website launch, or just noticed your team's headshots are five years out of date and wildly inconsistent. You need this handled efficiently, without pulling everyone away from their desks for half a day.</p>
+            <ul class="who-list">
+              <li>We handle all the logistics — brief, scheduling, setup, delivery</li>
+              <li>One point of contact throughout</li>
+              <li>Organized delivery folder per team member</li>
+              <li>Invoice-friendly billing for your budget process</li>
+            </ul>
+          </div>
+          <div class="who-card">
+            <span class="who-tag" style="background:var(--black)">Founders & CEOs</span>
+            <h3>Founders &<br>Senior Leaders</h3>
+            <p>You're about to raise a round, launch a new product, or speak at a conference and suddenly realize your LinkedIn photo is from 2018. Or you're building a team and want a cohesive visual identity from day one.</p>
+            <ul class="who-list">
+              <li>Fast turnaround — often same-day for small teams</li>
+              <li>Executive sessions available for leadership tier</li>
+              <li>Flexible scheduling around your calendar</li>
+              <li>Can start with leadership and scale to the full team</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ────────────────────────────────────── -->
+    <section style="background:var(--cream)">
+      <div class="container">
+        <span class="eyebrow">What Clients Say</span>
+        <h2 class="mt-16">In their words.</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <blockquote>"Hands down the best photography team I've ever worked with. Nils knew how to handle our most senior staff and made them feel at ease. We got headshots of over 40 people and everyone loved theirs."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Kate Wisman</strong>Marketing Director
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <blockquote>"The SpeedyHeadshots team helped us streamline our corporate identity and create a cohesive set of headshots for our sales and client-facing teams. We asked for specific details — they delivered promptly."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Yoon Chung</strong>Founder
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <blockquote>"We reached out Tuesday, shot Thursday morning, and had retouched images Thursday afternoon in time for our investor presentation. Pricing was great too."</blockquote>
+            <div class="testimonial-credit">
+              <strong>David Kim</strong>CEO
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pricing ─────────────────────────────────────────── -->
+    <section id="pricing">
+      <div class="container">
+        <span class="eyebrow">Team Pricing</span>
+        <h2 class="mt-16">Per person. No hidden fees.</h2>
+        <p style="margin-top:14px;font-size:16px;color:var(--mid);max-width:520px;">All rates include travel within Toronto, full portable studio setup, ~20 minutes per person, 1 retouched image, and Google Drive delivery in web and hi-res formats.</p>
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Startup</div>
+            <div class="pricing-size">4–9 team members</div>
+            <div class="pricing-price">$175</div>
+            <p class="pricing-unit">per person + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>~20 min per person</li>
+              <li>We come to your office</li>
+              <li>1 retouched image per person</li>
+              <li>All digitals included</li>
+              <li>24h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/7GHXUGJ2Y36EJUTDGMNKKBY6"
+               class="btn" target="_blank" rel="noopener">Book Startup</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-tier">Business</div>
+            <div class="pricing-size">10–19 team members</div>
+            <div class="pricing-price">$150</div>
+            <p class="pricing-unit">per person + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>~20 min per person</li>
+              <li>We come to your office</li>
+              <li>1 retouched image per person</li>
+              <li>All digitals included</li>
+              <li>24h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/IBANQN5KXDO2CHL7GQWBVCNX"
+               class="btn" target="_blank" rel="noopener">Book Business</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Enterprise</div>
+            <div class="pricing-size">20+ team members</div>
+            <div class="pricing-price">$125</div>
+            <p class="pricing-unit">per person + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>~20 min per person</li>
+              <li>We come to your office</li>
+              <li>1 retouched image per person</li>
+              <li>All digitals included</li>
+              <li>24h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/MFBRQ7ZKZ6OEFM7FP4FTAZWN"
+               class="btn" target="_blank" rel="noopener">Book Enterprise</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Day Rate</div>
+            <div class="pricing-size">Unlimited team members</div>
+            <div class="pricing-price">$2,750</div>
+            <p class="pricing-unit">flat rate + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>Full day (up to 8 hours)</li>
+              <li>We come to your office</li>
+              <li>1 retouched image per person</li>
+              <li>All digitals included</li>
+              <li>Best for 25+ people</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/FQF3G5OVO34Q4CCGB5RS5B3P"
+               class="btn" target="_blank" rel="noopener">Book Day Rate</a>
+          </div>
+
+        </div>
+        <p class="pricing-note">Additional retouched images $25 each. Travel outside Toronto may incur a fee — <a href="mailto:hi@speedyheadshots.com" style="color:var(--black);border-bottom:1px solid var(--border);">ask us first.</a></p>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section style="background:var(--cream);">
+      <div class="container" style="max-width:800px;">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-16">Common questions.</h2>
+        <div class="faq-list" style="margin-top:40px;">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How much space do you need to set up?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              A standard meeting room works perfectly — typically a 3×4 metre space is enough. We bring a backdrop stand, two light stands, and a laptop for tethering. We can also work in a lobby, a corridor, or against a plain wall if that's what's available. We've set up in some tight spots and always make it work.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do we schedule 20 people in one day?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              At ~20 minutes per person, a team of 20 takes around 7 hours including setup and buffer time. We'll send you a simple scheduling template to fill 20-minute slots throughout the day — your team books their own slot and shows up when it's their turn. No one needs to be there the whole day.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What if some team members are remote or miss the shoot day?
+              <span class="faq-icon" aria-expanded="false">+</span>
+            </button>
+            <div class="faq-answer">
+              Remote team members can book an individual session at our Regent Park studio at any time. We maintain the same lighting setup and backdrop style so their photos match the rest of the team. No per-person refunds for no-shows on the day — see our <a href="/studio-policy/" style="color:var(--black);border-bottom:1px solid currentColor;">Studio Policy</a> for details.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can we see the photos before they're retouched?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. The camera is tethered to a laptop throughout the shoot, so each person can review their shots on a large screen immediately after. Most people make their final selection on the day — which means you get your retouched images faster.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you shoot outside Toronto?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes — we cover the full GTA and regularly shoot in Mississauga, Markham, Vaughan, and Oakville. For locations beyond the GTA, a travel fee applies. Email us your location and team size for a custom quote.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What should our team wear?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Whatever they'd normally wear to work. Business casual, suits, or professional attire all work well. We recommend solid colours over busy patterns, and avoiding pure white if your backdrop is light. We'll include a short prep guide in the booking confirmation to forward to your team.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="cta-banner" style="border-top:none;">
+      <h2>Ready to get your<br>team <em>looking the part?</em></h2>
+      <p>Email us your headcount and preferred date. We'll confirm availability and send a quote within a few hours.</p>
+      <div class="cta-actions">
+        <a href="mailto:hi@speedyheadshots.com?subject=Corporate%20Headshot%20Enquiry" class="btn btn-warm">Get a Quote</a>
+        <a href="tel:13473661342" class="btn btn-ghost">Call Us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+  </script>
+
+</body>
+</html>
