@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Headshots Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Fashion, editorial, and modeling portfolio photography in Toronto. Agency submissions, test shoots, and lookbooks. Shot by a photographer who has worked with A-list talent worldwide.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/model/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+
+    /* ── Hero — full bleed, editorial ─────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-col-img {
+      overflow: hidden;
+      background: var(--black);
+    }
+    .hero-col-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .85;
+      transition: opacity .4s;
+    }
+    .hero-col-img:hover img { opacity: 1; }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(40px,6vw,80px);
+      background: var(--black);
+      color: var(--white);
+    }
+    .hero-copy .eyebrow { color: rgba(255,255,255,.4); }
+    .hero-copy h1 {
+      color: var(--white);
+      margin-top: 14px;
+      font-size: clamp(40px,5vw,72px);
+    }
+    .hero-copy h1 em { font-style: italic; color: var(--warm); }
+    .hero-copy p {
+      margin-top: 20px;
+      font-size: 16px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.7;
+      max-width: 340px;
+    }
+    .hero-copy .hero-actions { margin-top: 36px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-copy .btn { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .hero-copy .btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    .hero-copy .btn-warm { background: var(--warm); border-color: var(--warm); }
+    .hero-copy .btn-warm:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Masonry gallery ──────────────────────────────────── */
+    .masonry {
+      columns: 3;
+      column-gap: 3px;
+      margin-top: 56px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 3px;
+      overflow: hidden;
+      position: relative;
+      display: block;
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(27,63,122,0);
+      transition: background .35s;
+      pointer-events: none;
+    }
+    .masonry-item:hover::after { background: rgba(27,63,122,.1); }
+
+    /* ── Photographer intro ───────────────────────────────── */
+    .photographer-section { background: var(--black); color: var(--white); }
+    .photographer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .photographer-image {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+    .photographer-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .photographer-copy .eyebrow { color: rgba(255,255,255,.35); }
+    .photographer-copy h2 { color: var(--white); margin-top: 14px; }
+    .photographer-copy h2 em { font-style: italic; color: var(--warm); }
+    .photographer-copy p {
+      font-size: 16px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.75;
+      margin-top: 20px;
+    }
+    .photographer-copy blockquote {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,.8);
+      line-height: 1.55;
+      border-left: 2px solid var(--warm);
+      padding-left: 24px;
+      margin: 32px 0;
+    }
+    .photographer-credentials {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .cred-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+    }
+    .cred-item::before {
+      content: '—';
+      color: var(--warm);
+      flex-shrink: 0;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    /* ── Services ─────────────────────────────────────────── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 36px 28px;
+      transition: background .2s;
+    }
+    .service-card:hover { background: var(--cream); }
+    .service-num {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      color: var(--warm);
+      margin-bottom: 12px;
+    }
+    .service-card h3 { font-size: 21px; margin-bottom: 10px; }
+    .service-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+    /* ── Agencies ─────────────────────────────────────────── */
+    .agencies-section { background: var(--cream); }
+    .agencies-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(20px,3vw,48px);
+      flex-wrap: wrap;
+      margin-top: 40px;
+      padding: 40px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .agency-logo {
+      height: 36px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(40%);
+      transition: filter .2s;
+    }
+    .agency-logo:hover { filter: grayscale(0%) opacity(100%); }
+    .agencies-disclaimer {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--mid);
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* ── Pricing ──────────────────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      border: 1.5px solid var(--border);
+      padding: 40px 32px;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -1px; right: 24px;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+    .pricing-tier { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+    .pricing-card.featured .pricing-tier { color: rgba(255,255,255,.4); }
+    .pricing-tagline { font-size: 13px; color: var(--mid); }
+    .pricing-card.featured .pricing-tagline { color: rgba(255,255,255,.4); }
+    .pricing-price { font-family: var(--font-serif); font-size: 56px; font-weight: 300; line-height: 1; margin: 20px 0 4px; }
+    .pricing-unit { font-size: 12px; color: var(--mid); }
+    .pricing-card.featured .pricing-unit { color: rgba(255,255,255,.4); }
+    .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,.12); }
+    .pricing-includes { display: flex; flex-direction: column; gap: 9px; }
+    .pricing-includes li { font-size: 14px; color: var(--mid); line-height: 1.45; padding-left: 16px; position: relative; }
+    .pricing-card.featured .pricing-includes li { color: rgba(255,255,255,.55); }
+    .pricing-includes li::before { content: '—'; position: absolute; left: 0; color: var(--warm); font-size: 11px; }
+    .pricing-card .btn { width: 100%; justify-content: center; margin-top: 28px; font-size: 12px; }
+    .pricing-card.featured .btn { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .pricing-card.featured .btn:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .pricing-note { margin-top: 18px; font-size: 13px; color: var(--mid); text-align: center; line-height: 1.6; }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; padding: 22px 0; background: none; border: none; cursor: pointer;
+      text-align: left; font-family: var(--font-serif); font-size: 19px; color: var(--black);
+    }
+    .faq-icon {
+      flex-shrink: 0; width: 24px; height: 24px; border: 1px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--mid); transition: transform .25s, background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--black); color: var(--white); border-color: var(--black); }
+    .faq-answer { display: none; padding: 0 0 22px; font-size: 15px; color: var(--mid); line-height: 1.75; max-width: 680px; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA ──────────────────────────────────────────────── */
+    .cta-banner { background: var(--black); color: var(--white); text-align: center; padding: clamp(64px,10vw,112px) var(--gutter); }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.5); margin-top: 14px; font-size: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .cta-actions .btn { padding: 14px 32px; }
+    .cta-actions .btn-warm { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .cta-actions .btn-warm:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .cta-actions .btn-ghost { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .cta-actions .btn-ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-col-img { height: 50vw; min-height: 260px; }
+      .hero-col-img:nth-child(2) { display: none; }
+      .photographer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .photographer-image { aspect-ratio: 16/9; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .masonry { columns: 2; }
+    }
+    @media (max-width: 560px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .masonry { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero" style="padding:0;border-top:none;">
+      <div class="hero-col-img">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-aa54301c8343f68f344c6da4dc593ad4/image.jpg"
+             alt="Fashion modeling portfolio" loading="eager">
+      </div>
+      <div class="hero-col-img">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-ad815c716169720849cd7cbaa329a5a2/image.jpg"
+             alt="Editorial modeling photography" loading="eager">
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Model Headshots Toronto</span>
+        <h1>A portfolio that<br>gets you <em>in the room.</em></h1>
+        <p>Fashion, editorial, and agency submission photography. Shot by a photographer who has worked with A-list talent worldwide and shot campaigns for the world's biggest brands.</p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-warm">See Packages</a>
+          <a href="mailto:hi@speedyheadshots.com?subject=Modeling%20Portfolio%20Enquiry" class="btn">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Gallery ────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="mt-16" style="max-width:480px">Fashion. Editorial.<br><em class="serif" style="font-style:italic">Beauty. Commercial.</em></h2>
+        <div class="masonry">
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-aa54301c8343f68f344c6da4dc593ad4/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-9e02cd3372a08e46a0dcf68316e50949/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-bda3ac95d52a88f430df48f4c25f1088/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-ad815c716169720849cd7cbaa329a5a2/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-64101ec4440e5a9e28f34ba0876e0e23/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-63962d7a0a3a3c5dd695ee2b84369816/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-b34f7df911633307de429580c72ac8af/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-9aa312adfaf84116163ef9adb2fa215e/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-665044150b0fdeb4173d2175f15a7c85/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-20267cce3d3980818fcf4c2671298d34/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-ed52852960ecdcf9c6739b6856f32c48/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-fa62f3463ecf5625fff68ff01a494137/image.jpg" alt="Modeling portfolio" loading="lazy">
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a href="/gallery/modeling/" class="btn">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About Nils ──────────────────────────────────────── -->
+    <section class="photographer-section">
+      <div class="container">
+        <div class="photographer-grid">
+          <div class="photographer-image">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-982f57ba450b84f2ddbf3c663f5fba38/image.jpg"
+                 alt="Nils Decker — fashion photographer Toronto" loading="lazy">
+          </div>
+          <div class="photographer-copy">
+            <span class="eyebrow">Your Photographer</span>
+            <h2>Shot in New York.<br>Paris. Milan.<br><em>Now in Toronto.</em></h2>
+            <blockquote>"Whether you're a seasoned pro or just starting out, I'll help you through the process and get you images that open doors at agencies in Toronto, New York, Paris, Milan, LA, or Tokyo."</blockquote>
+            <p>Nils has spent two decades behind the lens for fashion, editorial, and beauty — working with Grammy-winning musicians, A-list models, and the world's largest fashion brands. His work has appeared on international magazine covers, billboards, and global ad campaigns.</p>
+            <div class="photographer-credentials">
+              <div class="cred-item">20+ years of fashion and editorial photography</div>
+              <div class="cred-item">International brands — campaigns, editorials, lookbooks</div>
+              <div class="cred-item">A-list talent and supermodels worldwide</div>
+              <div class="cred-item">Magazine covers and billboard campaigns</div>
+              <div class="cred-item">Studio in Toronto — available for test shoots and agency submissions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services ───────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">What We Shoot</span>
+        <h2 class="mt-16" style="max-width:480px">Every type of<br><em class="serif" style="font-style:italic">modeling content.</em></h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-num">01</div>
+            <h3>Agency Submissions</h3>
+            <p>Clean, agency-standard comp card images. We know what Toronto, New York, Paris, and Milan agencies expect — and we shoot to that standard. Simple, sharp, and versatile.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">02</div>
+            <h3>Test Shoots</h3>
+            <p>Build your book before you have the credits. Test shoots let you explore looks, develop range, and give agencies something to work with. We collaborate on concepts and execute together.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">03</div>
+            <h3>Editorial & Fashion</h3>
+            <p>Magazine-quality editorial photography. Multiple looks, creative direction, styled sets. The kind of work you'd see in print — whether you're submitting to a publication or building a personal brand.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">04</div>
+            <h3>Commercial & eCommerce</h3>
+            <p>Clean product-focused images on seamless white or coloured paper. Apparel, lifestyle, and brand work. Ideal for brands that need models who can carry a look and hit a brief.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">05</div>
+            <h3>Beauty</h3>
+            <p>Close-up beauty shots showcasing skin, features, and technique. Shot with studio lighting tuned specifically for beauty — and retouched with the detail-oriented care that beauty images demand.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-num">06</div>
+            <h3>Lookbooks</h3>
+            <p>Multi-look editorial sessions for brands, designers, and influencers. Full creative direction, set styling, and post-production. Delivered as a cohesive, publish-ready visual package.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Agencies ────────────────────────────────────────── -->
+    <section class="agencies-section">
+      <div class="container">
+        <span class="eyebrow">Agencies We Work With</span>
+        <h2 class="mt-16" style="max-width:480px">Represented by<br><em class="serif" style="font-style:italic">the best.</em></h2>
+        <div class="agencies-row">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=266&iH=136/wp-d35aeba3d8c1063fbb44539cfa21c474/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=154&iH=142/wp-1b5c255615fd13300510188f0f5dae89/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=328&iH=132/wp-f9ce0b16b7f5784002b554d46596f118/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=130&iH=142/wp-8d8ef8528453b6a8f66431041ebd02e1/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=406&iH=108/wp-27da14baa8333c84fc4ab55877ffe68f/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=170&iH=144/wp-3f861fda91735be67ab26c2a8753f04c/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=126&iH=128/wp-3e093a570e2ec52d883bcf1c6c12d0dd/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=122&iH=122/wp-fc3942e5dc7022c0df9204fafed874d7/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=224&iH=146/wp-7da1974932c6a2a782a071c9c01c4a55/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+          <img src="https://cloud-1de12d.becdn.net/media/iW=406&iH=50/wp-96f9414f385360853adb0c7b88418d4f/image.png" alt="Modeling agency" class="agency-logo" loading="lazy">
+        </div>
+        <p class="agencies-disclaimer">We are not affiliated with or official scouts for any of the above agencies. Please visit each agency's website directly to learn more about representation and applications.</p>
+      </div>
+    </section>
+
+    <!-- ── Pricing ─────────────────────────────────────────── -->
+    <section id="pricing">
+      <div class="container">
+        <span class="eyebrow">Packages</span>
+        <h2 class="mt-16">Pick your session.</h2>
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Mini</div>
+            <p class="pricing-tagline">Agency submission, first portfolio</p>
+            <div class="pricing-price">$175</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>30 min shoot</li>
+              <li>1 look</li>
+              <li>1 retouched image</li>
+              <li>All digital images included</li>
+            </ul>
+            <a href="/contact/" class="btn">Book Mini</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-tier">Look Book</div>
+            <p class="pricing-tagline">Build your book, develop range</p>
+            <div class="pricing-price">$475</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>90 min shoot</li>
+              <li>3 looks</li>
+              <li>3 retouched images</li>
+              <li>All digital images included</li>
+              <li>Multiple backdrops</li>
+            </ul>
+            <a href="/contact/" class="btn">Book Look Book</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Editorial</div>
+            <p class="pricing-tagline">Full creative production</p>
+            <div class="pricing-price">$675</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>3–4 hour shoot</li>
+              <li>Unlimited looks</li>
+              <li>$35 per retouched image chosen</li>
+              <li>All digital images included</li>
+              <li>Full creative direction</li>
+            </ul>
+            <a href="/contact/" class="btn">Book Editorial</a>
+          </div>
+
+        </div>
+        <p class="pricing-note">Additional retouching: $35/image (editorial), $50/image (beauty).<br>All prices in CAD, excluding HST.</p>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section style="background:var(--cream);">
+      <div class="container" style="max-width:800px;">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-16">Common questions.</h2>
+        <div class="faq-list" style="margin-top:40px;">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              I'm just starting out. Is this right for me?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. The Mini and Look Book packages are specifically designed for models building their first portfolio or updating their comp cards. You don't need agency representation to book — Nils will guide you through every pose and look. The goal is to get you images that get you representation, not images that require you to already have it.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What should I bring to a modeling session?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              For agency submissions: neutral, form-fitting basics — a white t-shirt, dark jeans, simple dress. Agencies want to see you, not the outfit. For look book or editorial sessions, bring a range of options — we'll discuss and plan looks in advance. Keep makeup natural unless we've agreed otherwise. Hair should be clean and styled but versatile.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Which agencies can I submit these photos to?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Any agency you're interested in. The images meet the standard expected by major agencies in Toronto, New York, Paris, Milan, Los Angeles, and Tokyo. We're not scouts or affiliated with any specific agency — but Nils can advise on what different types of agencies are looking for based on your look and goals.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you do hair and makeup?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              We don't provide in-house hair and makeup, but we can refer you to trusted MUA and hair stylists in Toronto who work regularly with our studio. For editorial and lookbook sessions, working with a stylist is strongly recommended — reach out and we'll connect you.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How many final images will I receive?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The number of retouched images is specified in each package (1 for Mini, 3 for Look Book, chosen images for Editorial). You'll also receive all unretouched digitals from the session. Additional retouched images can be added at $35 each (editorial) or $50 each (beauty).
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="cta-banner" style="border-top:none;">
+      <h2>Ready to build<br>a portfolio that <em>gets you booked?</em></h2>
+      <p>Get in touch with your goals and we'll recommend the right package for where you are in your career.</p>
+      <div class="cta-actions">
+        <a href="mailto:hi@speedyheadshots.com?subject=Modeling%20Portfolio%20Enquiry" class="btn btn-warm">Get in Touch</a>
+        <a href="#pricing" class="btn btn-ghost">See Packages</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+  </script>
+
+</body>
+</html>
