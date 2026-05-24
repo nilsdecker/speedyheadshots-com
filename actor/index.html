@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actor Headshots Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Actor headshots in Toronto trusted by Grammy winners, Hollywood actors, and award-winning composers. 24-hour turnaround. Creative lighting concepts available.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/actor/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+
+    /* ── Hero — dark, dramatic ─────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      background: var(--black);
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: .75;
+    }
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 60%, var(--black) 100%);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px,8vw,96px) clamp(40px,6vw,80px);
+      color: var(--white);
+    }
+    .hero-copy .eyebrow { color: rgba(255,255,255,.35); }
+    .hero-copy h1 {
+      color: var(--white);
+      font-size: clamp(44px,6vw,80px);
+      margin-top: 14px;
+      line-height: 1.05;
+    }
+    .hero-copy h1 em { font-style: italic; color: var(--warm); }
+    .hero-copy p {
+      margin-top: 22px;
+      font-size: 17px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.7;
+      max-width: 380px;
+    }
+    .hero-social-proof {
+      margin-top: 36px;
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.04);
+    }
+    .hero-proof-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--warm);
+      margin-bottom: 12px;
+    }
+    .hero-proof-quote {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255,255,255,.75);
+      line-height: 1.55;
+    }
+    .hero-proof-credit {
+      margin-top: 12px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.35);
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-actions .btn { border-color: rgba(255,255,255,.25); color: var(--white); }
+    .hero-actions .btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    .hero-actions .btn-warm { background: var(--warm); border-color: var(--warm); }
+    .hero-actions .btn-warm:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Masonry gallery ──────────────────────────────────── */
+    .masonry {
+      columns: 3;
+      column-gap: 3px;
+      margin-top: 56px;
+    }
+    .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 3px;
+      overflow: hidden;
+      position: relative;
+      display: block;
+    }
+    .masonry-item img {
+      width: 100%;
+      display: block;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(27,63,122,0);
+      transition: background .35s;
+      pointer-events: none;
+    }
+    .masonry-item:hover::after { background: rgba(27,63,122,.1); }
+
+    /* ── Testimonials — dark ──────────────────────────────── */
+    .testimonials-section { background: var(--black); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      padding: 40px 32px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.02);
+    }
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.1);
+    }
+    .testimonial-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .testimonial-card blockquote {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.6;
+      font-style: italic;
+      color: rgba(255,255,255,.75);
+    }
+    .testimonial-credit {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+    .testimonial-credit strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 3px;
+    }
+    .testimonial-credit span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--warm);
+    }
+
+    /* ── What makes a great shot ──────────────────────────── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 56px;
+    }
+    .tip-card {
+      background: var(--white);
+      padding: 36px 28px;
+      transition: background .2s;
+    }
+    .tip-card:hover { background: var(--cream); }
+    .tip-num { font-family: var(--font-serif); font-size: 13px; color: var(--warm); margin-bottom: 12px; }
+    .tip-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .tip-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+    /* ── Creative options ─────────────────────────────────── */
+    .creative-section {
+      background: var(--black);
+      color: var(--white);
+    }
+    .creative-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .creative-image {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      position: relative;
+    }
+    .creative-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .creative-copy .eyebrow { color: rgba(255,255,255,.35); }
+    .creative-copy h2 { color: var(--white); margin-top: 14px; }
+    .creative-copy h2 em { font-style: italic; color: var(--warm); }
+    .creative-copy p { font-size: 16px; color: rgba(255,255,255,.55); line-height: 1.75; margin-top: 18px; }
+    .creative-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .creative-option {
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    .creative-option h4 { font-size: 15px; color: var(--white); margin-bottom: 6px; }
+    .creative-option p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.6; margin: 0; }
+
+    /* ── Pricing ──────────────────────────────────────────── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .pricing-card { border: 1.5px solid var(--border); padding: 40px 32px; position: relative; }
+    .pricing-card.featured { border-color: var(--black); background: var(--black); color: var(--white); }
+    .pricing-badge { position: absolute; top: -1px; right: 24px; background: var(--warm); color: var(--white); font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; }
+    .pricing-tier { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+    .pricing-card.featured .pricing-tier { color: rgba(255,255,255,.4); }
+    .pricing-tagline { font-size: 13px; color: var(--mid); }
+    .pricing-card.featured .pricing-tagline { color: rgba(255,255,255,.4); }
+    .pricing-price { font-family: var(--font-serif); font-size: 56px; font-weight: 300; line-height: 1; margin: 20px 0 4px; }
+    .pricing-unit { font-size: 12px; color: var(--mid); }
+    .pricing-card.featured .pricing-unit { color: rgba(255,255,255,.4); }
+    .pricing-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,.12); }
+    .pricing-includes { display: flex; flex-direction: column; gap: 9px; }
+    .pricing-includes li { font-size: 14px; color: var(--mid); line-height: 1.45; padding-left: 16px; position: relative; }
+    .pricing-card.featured .pricing-includes li { color: rgba(255,255,255,.55); }
+    .pricing-includes li::before { content: '—'; position: absolute; left: 0; color: var(--warm); font-size: 11px; }
+    .pricing-card .btn { width: 100%; justify-content: center; margin-top: 28px; font-size: 12px; }
+    .pricing-card.featured .btn { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .pricing-card.featured .btn:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .pricing-note { margin-top: 18px; font-size: 13px; color: var(--mid); text-align: center; }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 22px 0; background: none; border: none; cursor: pointer; text-align: left; font-family: var(--font-serif); font-size: 19px; color: var(--black); }
+    .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--mid); transition: transform .25s, background .2s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--black); color: var(--white); border-color: var(--black); }
+    .faq-answer { display: none; padding: 0 0 22px; font-size: 15px; color: var(--mid); line-height: 1.75; max-width: 680px; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA ──────────────────────────────────────────────── */
+    .cta-banner { background: var(--black); color: var(--white); text-align: center; padding: clamp(64px,10vw,112px) var(--gutter); }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.5); margin-top: 14px; font-size: 16px; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .cta-actions .btn { padding: 14px 32px; }
+    .cta-actions .btn-warm { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .cta-actions .btn-warm:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .cta-actions .btn-ghost { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .cta-actions .btn-ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .tips-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-image { height: 60vw; min-height: 300px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .creative-grid { grid-template-columns: 1fr; gap: 40px; }
+      .creative-image { aspect-ratio: 16/9; }
+      .creative-options { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .masonry { columns: 2; }
+    }
+    @media (max-width: 560px) {
+      .tips-grid { grid-template-columns: 1fr; }
+      .masonry { columns: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero" style="padding:0;border-top:none;">
+      <div class="hero-image">
+        <img
+          src="https://cloud-1de12d.becdn.net/media/iW=5000&iH=any/wp-4559c004cf662c1af8b8c42e1f37727a/image.jpg"
+          alt="Actor headshot — SpeedyHeadshots Toronto"
+          loading="eager"
+        >
+        <div class="hero-image-overlay"></div>
+      </div>
+      <div class="hero-copy">
+        <span class="eyebrow">Actor Headshots Toronto</span>
+        <h1>Photos that<br>get you<br><em>the role.</em></h1>
+        <p>Trusted by Grammy winners, Hollywood actors, and award-winning composers. 24-hour turnaround. Studio in Regent Park.</p>
+        <div class="hero-social-proof">
+          <div class="hero-proof-label">Grammy Winner</div>
+          <div class="hero-proof-quote">"Nils is one of a kind. He has an instinct to be there right at the moment when the feelings start to pour out."</div>
+          <div class="hero-proof-credit">Diego el Cigala — 2× Grammy Winner</div>
+        </div>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-warm">See Packages</a>
+          <a href="/gallery/actor/" class="btn">View Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Gallery ────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Actor Portfolio</span>
+        <h2 class="mt-16" style="max-width:480px">Character. Range.<br><em class="serif" style="font-style:italic">Emotion.</em></h2>
+        <div class="masonry">
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-4559c004cf662c1af8b8c42e1f37727a/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-22d3fbb14cfdff2783afd1bed55a5db1/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-c6a20aa787bc1f70d3ec60d375e5f09f/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=5000&iH=any/89167aa315f95150285597321086055f/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-d9a4df5b3b483a6e78db42d4b625017a/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-092b8259028f3df39973a3697d879f39/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-5c44e97b93ffaffeeabda4e228bef593/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-e2e2fc910beaf76be6d1fda16db3b6fe/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+          <div class="masonry-item">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-1f35b1fab3df7b157775665f0fc20f02/image.jpg" alt="Actor headshot" loading="lazy">
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:40px;">
+          <a href="/gallery/actor/" class="btn">View Full Gallery</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ────────────────────────────────────── -->
+    <section class="testimonials-section">
+      <div class="container">
+        <span class="eyebrow" style="color:rgba(255,255,255,.35)">What Artists Say</span>
+        <h2 class="mt-16" style="color:var(--white);max-width:440px">Trusted by<br><em class="serif" style="font-style:italic;color:var(--warm)">working artists.</em></h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img src="https://cloud-1de12d.becdn.net/media/iW=210&iH=210/wp-90e6a253a03da7c6313da372f6342f76/image.jpg" alt="Diego el Cigala" loading="lazy">
+            </div>
+            <blockquote>"Nils is one of a kind. He has an instinct to be there right at the moment when the feelings start to pour out. You won't notice him being there but you'll tear up when you see his images of you. Un gran hombre!!!"</blockquote>
+            <div class="testimonial-credit">
+              <strong>Diego el Cigala</strong>
+              <span>2× Grammy Winner</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img src="https://cloud-1de12d.becdn.net/media/iW=210&iH=210/c31e8ca3d5f2c8e5d9bc295c41702594/image.jpg" alt="Hayley Jackowitz" loading="lazy">
+            </div>
+            <blockquote>"I used Nils when I created my first headshot portfolio when I started out in Hollywood. Nils has always been approachable, hardworking, and got me the headshots which landed me multiple roles. Highly recommended."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Hayley Jackowitz</strong>
+              <span>Actress</span>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-avatar">
+              <img src="https://cloud-1de12d.becdn.net/media/iW=212&iH=212/wp-bd5944b670b1caf7700242b9e8c13422/image.png" alt="Frederik Wiedmann" loading="lazy">
+            </div>
+            <blockquote>"Nils consistently shoots our orchestra's and crews on set. Having worked with him and his team I know I can consistently expect quality and getting our artists the best headshots they can possibly get."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Frederik Wiedmann</strong>
+              <span>Grammy-Winning Composer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── What makes a great actor headshot ──────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Getting It Right</span>
+        <h2 class="mt-16" style="max-width:480px">What casting directors<br><em class="serif" style="font-style:italic">actually look for.</em></h2>
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-num">01</div>
+            <h3>Match the mood to the role</h3>
+            <p>A warm, friendly character calls for a light background and an open expression. A darker, more complex character needs lower contrast, moodier light. We'll help you think through the right approach for what you're submitting for.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">02</div>
+            <h3>Bring your range, not just a look</h3>
+            <p>The best actor headshots aren't just attractive — they convey something. We spend time before the camera rolls understanding who you're playing and what you want a casting director to feel when they see your photo.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">03</div>
+            <h3>Wear the character, not an outfit</h3>
+            <p>Dress as the character you want to be cast as. Your wardrobe should support the story you're telling, not distract from it. Bring multiple options and we'll advise on what's working with the light setup.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">04</div>
+            <h3>Natural retouching only</h3>
+            <p>Casting directors need to recognise you when you walk in the room. Heavy retouching works against you. We remove minor blemishes and balance the light — nothing that changes what you actually look like.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">05</div>
+            <h3>Energy in the room matters</h3>
+            <p>Getting the perfect shot is 99% the energy your photographer brings to the table. We're charged up, we direct, and we create an environment where emotions come naturally — not one where you're standing stiffly against a wall.</p>
+          </div>
+          <div class="tip-card">
+            <div class="tip-num">06</div>
+            <h3>Fast turnaround for last-minute calls</h3>
+            <p>Casting opportunities don't always give you two weeks' notice. We offer 24-hour standard delivery and same-day rush delivery on request. You book Tuesday, you have photos Wednesday. We've done it plenty of times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Creative options ────────────────────────────────── -->
+    <section class="creative-section">
+      <div class="container">
+        <div class="creative-grid">
+          <div class="creative-image">
+            <img src="https://cloud-1de12d.becdn.net/media/iW=5000&iH=any/wp-793a9eeaa061b08858a49f49a85efd62/image.jpg"
+                 alt="Creative actor headshot with dramatic lighting" loading="lazy">
+          </div>
+          <div class="creative-copy">
+            <span class="eyebrow">Stand Out</span>
+            <h2>Beyond the<br><em>standard shot.</em></h2>
+            <p>For actors who want to push further, we offer creative lighting concepts that make your headshots genuinely distinct — without losing the professionalism that casting directors expect.</p>
+            <div class="creative-options">
+              <div class="creative-option">
+                <h4>Coloured gels</h4>
+                <p>Dramatic colour washes that define mood and character in a single frame.</p>
+              </div>
+              <div class="creative-option">
+                <h4>Smoke & atmosphere</h4>
+                <p>Low-lying or diffused smoke for a cinematic, editorial quality.</p>
+              </div>
+              <div class="creative-option">
+                <h4>High contrast lighting</h4>
+                <p>Rembrandt, split, and rim lighting for strong, sculptural results.</p>
+              </div>
+              <div class="creative-option">
+                <h4>On-location</h4>
+                <p>Shooting in your natural environment — your space, your energy.</p>
+              </div>
+            </div>
+            <p style="margin-top:24px;font-size:14px;">Creative options are available on Broadway Theatre and Hollywood Rockstar packages. <a href="mailto:hi@speedyheadshots.com?subject=Creative%20Actor%20Headshot%20Enquiry" style="color:rgba(255,255,255,.6);border-bottom:1px solid rgba(255,255,255,.2);">Ask us about your concept →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Pricing ─────────────────────────────────────────── -->
+    <section id="pricing">
+      <div class="container">
+        <span class="eyebrow">Packages</span>
+        <h2 class="mt-16">Pick your session.</h2>
+        <div class="pricing-grid">
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Stage Extra</div>
+            <p class="pricing-tagline">Quick update or new submission</p>
+            <div class="pricing-price">$250</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>30 min shoot</li>
+              <li>1 lighting setup, 1 look</li>
+              <li>1 retouched image</li>
+              <li>All digitals included</li>
+              <li>Live preview on set</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/3F3BCBCR54ZW7PAACNN5AVTV"
+               class="btn" target="_blank" rel="noopener">Book Stage Extra</a>
+          </div>
+
+          <div class="pricing-card featured">
+            <div class="pricing-badge">Most Popular</div>
+            <div class="pricing-tier">Broadway Theatre</div>
+            <p class="pricing-tagline">Build your range</p>
+            <div class="pricing-price">$500</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>90 min shoot</li>
+              <li>2 lighting setups</li>
+              <li>3 looks</li>
+              <li>3 retouched images</li>
+              <li>All digitals included</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/V7LLZ5HKRSAAEX43RZSFRY4F"
+               class="btn" target="_blank" rel="noopener">Book Broadway Theatre</a>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-tier">Hollywood Rockstar</div>
+            <p class="pricing-tagline">Full lookbook refresh</p>
+            <div class="pricing-price">$675</div>
+            <p class="pricing-unit">per session + HST</p>
+            <hr class="pricing-divider">
+            <ul class="pricing-includes">
+              <li>3 hour shoot</li>
+              <li>Unlimited lighting setups</li>
+              <li>Unlimited looks</li>
+              <li>5 retouched images</li>
+              <li>Creative options available</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/A24HNJKNVKVL6FZGKU6P5KRG"
+               class="btn" target="_blank" rel="noopener">Book Hollywood Rockstar</a>
+          </div>
+
+        </div>
+        <p class="pricing-note">Additional retouched images $25 each. All prices in CAD, excluding HST.</p>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section style="background:var(--cream);">
+      <div class="container" style="max-width:800px;">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-16">Common questions.</h2>
+        <div class="faq-list" style="margin-top:40px;">
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long does an actor headshot session take?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Depending on the package: 30 minutes for Stage Extra, 90 minutes for Broadway Theatre, and up to 3 hours for Hollywood Rockstar. We build in time to settle in, discuss looks, and make adjustments — the goal is to leave with images you're genuinely excited to submit.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Can I bring multiple outfits?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Always bring more than you think you'll need. How many looks we actually shoot depends on your package and time, but having options on hand lets us react to what's working on camera. We'll advise on what reads best under the lights.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What background should I choose?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              It depends on the role. Lighter backgrounds with a warm tone work well for friendly, comedic, or accessible characters. Darker, more muted backgrounds suit complex, dramatic, or intense roles. If you have a specific casting in mind, tell us — we'll set up accordingly. We have a full range of options in studio.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you offer same-day turnaround?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Standard delivery is within 24 hours. If you have a submission deadline the same day, ask us when you book — we've turned images around in under 4 hours for urgent casting calls. Rush rates may apply.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              I'm new to acting. Is this the right place to start?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. Nils has worked with first-time actors building their first submission set as well as seasoned professionals refreshing their look. The Stage Extra package is built for exactly this — straightforward, fast, and well-priced for a first portfolio. We'll guide you through every part of it.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="cta-banner" style="border-top:none;">
+      <h2>The role is out there.<br><em>Let's get you the shot.</em></h2>
+      <p>Book your session online or get in touch to talk through what you need.</p>
+      <div class="cta-actions">
+        <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/3F3BCBCR54ZW7PAACNN5AVTV"
+           class="btn btn-warm" target="_blank" rel="noopener">Book Stage Extra — $250</a>
+        <a href="mailto:hi@speedyheadshots.com?subject=Actor%20Headshot%20Enquiry" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+  </script>
+
+</body>
+</html>
