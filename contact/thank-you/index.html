@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Message Sent | SpeedyHeadshots</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .ty-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: calc(100vh - var(--nav-h));
+      padding: var(--gutter);
+    }
+    .ty-card {
+      max-width: 480px;
+      text-align: center;
+    }
+    .ty-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .ty-card h1 { font-size: clamp(36px,5vw,56px); }
+    .ty-card h1 em { font-style: italic; color: var(--warm); }
+    .ty-card p { margin-top: 16px; font-size: 16px; color: var(--mid); line-height: 1.7; }
+    .ty-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="page-body">
+    <div class="ty-page">
+      <div class="ty-card">
+        <div class="ty-icon">✓</div>
+        <h1>Message<br><em>sent.</em></h1>
+        <p>We'll get back to you within a few hours. For urgent bookings, call us directly at <a href="tel:13473661342" style="color:var(--black);">+1 (347) 366 1342</a>.</p>
+        <div class="ty-actions">
+          <a href="/" class="btn btn-fill">Back to Home</a>
+          <a href="/pricing/" class="btn">See Pricing</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>
