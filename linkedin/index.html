@@ -287,6 +287,113 @@
       color: var(--black);
     }
 
+    /* ── LinkedIn mockup ──────────────────────────────────── */
+    .li-mockup-wrap {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .li-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.1);
+      font-family: var(--font-sans);
+    }
+    .li-banner {
+      height: 120px;
+      background: linear-gradient(135deg, var(--warm) 0%, #0f2550 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 12px 16px;
+    }
+    .li-banner-text {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .li-avatar-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 0 16px;
+      margin-top: -36px;
+    }
+    .li-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: var(--cream);
+    }
+    .li-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .li-connect-btn {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--warm);
+      border: 1.5px solid var(--warm);
+      padding: 6px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-bottom: 4px;
+    }
+    .li-info { padding: 12px 16px 0; }
+    .li-name { font-size: 20px; font-weight: 700; color: #000; }
+    .li-title { font-size: 14px; color: #333; margin-top: 2px; line-height: 1.4; }
+    .li-location { font-size: 13px; color: #666; margin-top: 4px; }
+    .li-stats { font-size: 13px; color: var(--warm); margin-top: 6px; font-weight: 600; }
+    .li-open-to {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 14px 16px 16px;
+      padding: 10px 14px;
+      border: 1px solid #d4e8c4;
+      border-radius: 6px;
+      background: #f0f8ea;
+      font-size: 12px;
+      color: #3a6e1e;
+    }
+    .li-open-to em { font-style: normal; font-weight: 600; }
+    .li-open-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4caf50;
+      flex-shrink: 0;
+    }
+    .li-callout {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .li-callout-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .li-callout-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--warm);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .li-callout-item strong { display: block; font-size: 15px; margin-bottom: 4px; }
+    .li-callout-item p { font-size: 13px; color: var(--mid); line-height: 1.6; margin: 0; }
+
     /* ── Photo strip ──────────────────────────────────────── */
     .photo-strip {
       display: grid;
@@ -379,9 +486,7 @@
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-image { height: 55vw; min-height: 280px; }
-      .stats-row { grid-template-columns: 1fr; }
-      .experience-grid { grid-template-columns: 1fr; gap: 40px; }
-      .experience-image { aspect-ratio: 16/9; }
+      .li-mockup-wrap { grid-template-columns: 1fr; gap: 40px; }
       .tips-grid { grid-template-columns: 1fr; }
       .packages-grid { grid-template-columns: 1fr; }
       .photo-strip { grid-template-columns: repeat(3,1fr); }
@@ -427,29 +532,74 @@
       </div>
     </section>
 
-    <!-- ── Why it matters ────────────────────────────────── -->
-    <section>
+    <!-- ── LinkedIn profile mockup ───────────────────────── -->
+    <section style="background:var(--cream);">
       <div class="container">
-        <span class="eyebrow">Why It Matters</span>
-        <h2 class="mt-16" style="max-width:520px">Your profile photo<br><em class="serif" style="font-style:italic">does more than you think.</em></h2>
-        <div class="stats-row">
-          <div class="stat-card">
-            <div class="stat-number">21×</div>
-            <p class="stat-label">more profile views for LinkedIn members with a photo vs. without one</p>
+        <span class="eyebrow">See the difference</span>
+        <h2 class="mt-16" style="max-width:520px">A photo that makes<br><em class="serif" style="font-style:italic">people stop scrolling.</em></h2>
+        <div class="li-mockup-wrap">
+          <!-- LinkedIn card mockup -->
+          <div class="li-card">
+            <!-- Banner -->
+            <div class="li-banner">
+              <span class="li-banner-text">Got my headshot at SpeedyHeadshots.com</span>
+            </div>
+            <!-- Avatar -->
+            <div class="li-avatar-row">
+              <div class="li-avatar">
+                <img
+                  src="https://cloud-1de12d.becdn.net/media/iW=400&iH=400/wp-8421df33d03ae05b3598c2df2f11c841/image.jpg"
+                  alt="LinkedIn profile headshot"
+                  loading="lazy"
+                >
+              </div>
+              <div class="li-connect-btn">Connect</div>
+            </div>
+            <!-- Profile info -->
+            <div class="li-info">
+              <div class="li-name">Alex Morgan</div>
+              <div class="li-title">Senior Account Executive at Acme Corp</div>
+              <div class="li-location">Toronto, Ontario, Canada</div>
+              <div class="li-stats">
+                <span><strong>412</strong> connections</span>
+              </div>
+            </div>
+            <!-- Bottom bar -->
+            <div class="li-open-to">
+              <div class="li-open-dot"></div>
+              <span>Open to work · <em>New opportunities</em></span>
+            </div>
           </div>
-          <div class="stat-card">
-            <div class="stat-number">9×</div>
-            <p class="stat-label">more connection requests received when you have a professional headshot</p>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number">36×</div>
-            <p class="stat-label">more messages received — your photo is the first thing someone sees before they read a word</p>
+
+          <!-- Callout -->
+          <div class="li-callout">
+            <div class="li-callout-item">
+              <div class="li-callout-icon">↑</div>
+              <div>
+                <strong>21× more profile views</strong>
+                <p>Profiles with photos get dramatically more visibility in search and suggested connections.</p>
+              </div>
+            </div>
+            <div class="li-callout-item">
+              <div class="li-callout-icon">↑</div>
+              <div>
+                <strong>9× more connection requests</strong>
+                <p>A professional photo signals credibility before anyone reads your headline.</p>
+              </div>
+            </div>
+            <div class="li-callout-item">
+              <div class="li-callout-icon">↑</div>
+              <div>
+                <strong>36× more messages</strong>
+                <p>Recruiters, prospects, and partners are more likely to reach out when they can see who they're talking to.</p>
+              </div>
+            </div>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+               class="btn btn-fill" target="_blank" rel="noopener" style="margin-top:8px;">Book Mini — $250</a>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ── Photo strip ────────────────────────────────────── -->
     <div class="photo-strip">
       <div class="photo-strip-item">
         <img src="https://cloud-1de12d.becdn.net/media/iW=600&iH=800/wp-8421df33d03ae05b3598c2df2f11c841/image.jpg" alt="LinkedIn headshot sample" loading="lazy">
