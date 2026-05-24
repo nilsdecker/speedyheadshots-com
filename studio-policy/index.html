@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Studio Policy | SpeedyHeadshots Toronto</title>
+  <meta name="description" content="SpeedyHeadshots studio policy — booking, cancellation, rescheduling, delivery, image usage, and conduct guidelines.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .policy-hero {
+      padding: clamp(64px, 10vw, 112px) 0 clamp(48px, 6vw, 72px);
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-hero .eyebrow { margin-bottom: 16px; }
+    .policy-hero h1 { font-size: clamp(40px, 6vw, 72px); max-width: 640px; }
+    .policy-hero p {
+      margin-top: 20px;
+      font-size: 17px;
+      color: var(--mid);
+      max-width: 560px;
+      line-height: 1.65;
+    }
+    .policy-meta {
+      margin-top: 32px;
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .policy-body {
+      padding: clamp(48px, 8vw, 96px) 0;
+    }
+    .policy-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Sticky sidebar nav */
+    .policy-nav {
+      position: sticky;
+      top: calc(var(--nav-h) + 32px);
+    }
+    .policy-nav h5 {
+      font-family: var(--font-sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 16px;
+    }
+    .policy-nav a {
+      display: block;
+      font-size: 13px;
+      color: var(--mid);
+      padding: 6px 0;
+      border-left: 2px solid var(--border);
+      padding-left: 12px;
+      transition: color .15s, border-color .15s;
+    }
+    .policy-nav a:hover { color: var(--black); border-color: var(--warm); }
+
+    /* Content */
+    .policy-content { max-width: 680px; }
+    .policy-section {
+      margin-bottom: 64px;
+      scroll-margin-top: calc(var(--nav-h) + 32px);
+    }
+    .policy-section h2 {
+      font-size: 28px;
+      font-weight: 400;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .policy-section p {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .policy-section p:last-child { margin-bottom: 0; }
+    .policy-section strong { color: var(--black); font-weight: 600; }
+    .policy-section ul {
+      margin: 14px 0;
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .policy-section ul li {
+      display: flex;
+      gap: 10px;
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+    .policy-section ul li::before {
+      content: '—';
+      font-size: 12px;
+      color: var(--warm);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .policy-callout {
+      background: var(--cream);
+      border-left: 3px solid var(--warm);
+      padding: 18px 20px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+    .policy-callout strong { color: var(--black); }
+
+    .policy-contact-box {
+      margin-top: 64px;
+      padding: 36px;
+      border: 1.5px solid var(--border);
+    }
+    .policy-contact-box h3 { font-size: 24px; margin-bottom: 12px; }
+    .policy-contact-box p { font-size: 15px; color: var(--mid); margin-bottom: 16px; }
+    .policy-contact-box a { color: var(--black); border-bottom: 1px solid var(--border); }
+
+    @media (max-width: 860px) {
+      .policy-layout { grid-template-columns: 1fr; gap: 40px; }
+      .policy-nav { position: static; display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- Hero -->
+    <section class="policy-hero" style="padding-bottom:0;border:none;">
+      <div class="container">
+        <span class="eyebrow">Legal & Policies</span>
+        <h1>Studio Policy</h1>
+        <p>Everything you need to know before, during, and after your session — booking, cancellations, delivery, and conduct.</p>
+        <p class="policy-meta">Last updated: May 2026</p>
+      </div>
+    </section>
+
+    <!-- Body -->
+    <div class="policy-body">
+      <div class="container">
+        <div class="policy-layout">
+
+          <!-- Sidebar nav -->
+          <aside class="policy-nav" aria-label="Policy sections">
+            <h5>On this page</h5>
+            <a href="#booking">Booking</a>
+            <a href="#cancellation">Cancellation</a>
+            <a href="#rescheduling">Rescheduling</a>
+            <a href="#late-arrival">Late Arrival</a>
+            <a href="#no-show">No-Show</a>
+            <a href="#delivery">Image Delivery</a>
+            <a href="#usage">Image Usage</a>
+            <a href="#retouching">Retouching</a>
+            <a href="#conduct">Studio Conduct</a>
+            <a href="#liability">Liability</a>
+            <a href="#contact">Contact Us</a>
+          </aside>
+
+          <!-- Policy content -->
+          <div class="policy-content">
+
+            <div class="policy-section" id="booking">
+              <h2>Booking</h2>
+              <p>A session is confirmed only once a deposit or full payment has been received and a confirmation email has been sent by SpeedyHeadshots. Verbal or written enquiries do not constitute a confirmed booking.</p>
+              <p>For group corporate sessions (10+ people), a minimum deposit of 50% of the estimated total is required to hold the date. The remaining balance is due on the day of the shoot.</p>
+              <p>Individual and small-team sessions (1–9 people) are paid in full at the time of booking unless otherwise agreed in writing.</p>
+              <p>Bookings can be made online at <a href="/pricing/" style="color:var(--black);border-bottom:1px solid currentColor;">speedyheadshots.com/pricing</a> or by emailing <a href="mailto:hi@speedyheadshots.com" style="color:var(--black);border-bottom:1px solid currentColor;">hi@speedyheadshots.com</a>.</p>
+            </div>
+
+            <div class="policy-section" id="cancellation">
+              <h2>Cancellation</h2>
+              <p><strong>48 hours or more before the session:</strong> Full refund or free rescheduling. No questions asked.</p>
+              <p><strong>24–48 hours before the session:</strong> 50% of the session fee is non-refundable. You may reschedule once at no additional charge, subject to availability.</p>
+              <p><strong>Less than 24 hours before the session:</strong> The full session fee is non-refundable. Rescheduling at this stage is at our discretion and may incur an additional booking fee.</p>
+              <div class="policy-callout">
+                <strong>Group bookings:</strong> For corporate sessions with 10 or more participants, cancellations within 72 hours of the scheduled shoot are subject to the full session fee. We understand things happen — reach out as early as possible and we'll always try to find a solution.
+              </div>
+              <p>All cancellations must be submitted in writing to <a href="mailto:hi@speedyheadshots.com" style="color:var(--black);border-bottom:1px solid currentColor;">hi@speedyheadshots.com</a>. Phone or voicemail cancellations are not accepted.</p>
+            </div>
+
+            <div class="policy-section" id="rescheduling">
+              <h2>Rescheduling</h2>
+              <p>You may reschedule your session once at no charge, provided you give at least 48 hours' notice. Additional reschedules are subject to a $50 administrative fee per change.</p>
+              <p>Rescheduled sessions must be completed within 90 days of the original booking date. Sessions not rescheduled within this window will be forfeited without refund.</p>
+              <p>SpeedyHeadshots reserves the right to reschedule a session due to photographer illness, studio issues, or circumstances outside our control. In these cases, you will receive a full refund or be offered a replacement date at your preference.</p>
+            </div>
+
+            <div class="policy-section" id="late-arrival">
+              <h2>Late Arrival</h2>
+              <p>Sessions begin at the scheduled time. If you arrive late, your session will end at the originally scheduled time and the full fee applies — we run a tight schedule to respect everyone's time.</p>
+              <p><strong>Up to 15 minutes late:</strong> Your session proceeds with the remaining time. No adjustment to the fee.</p>
+              <p><strong>More than 15 minutes late:</strong> The session may need to be rescheduled at our discretion. The late cancellation policy applies.</p>
+              <p>If you're running late, please text or call us immediately at <a href="tel:13473661342" style="color:var(--black);border-bottom:1px solid currentColor;">+1 (347) 366 1342</a> — we'll do our best to accommodate where possible.</p>
+            </div>
+
+            <div class="policy-section" id="no-show">
+              <h2>No-Show</h2>
+              <p>If you do not arrive for a booked session and have not contacted us in advance, the full session fee is forfeited. No refund or rescheduling credit will be issued.</p>
+              <p>For group bookings, if individual team members are absent on the day, we will shoot those who are present. No per-person refunds are issued for absent participants.</p>
+            </div>
+
+            <div class="policy-section" id="delivery">
+              <h2>Image Delivery</h2>
+              <p>All images are delivered via a shared Google Drive link sent to the email address provided at booking.</p>
+              <p><strong>Standard turnaround:</strong> 24 hours for sessions up to 10 people. 48 hours for larger groups.</p>
+              <p><strong>Rush delivery</strong> (same-day or within 4 hours) is available on request and subject to a surcharge. Contact us before booking to confirm availability.</p>
+              <p>Every delivery includes:</p>
+              <ul>
+                <li>All unretouched digital images from the session</li>
+                <li>1 professionally retouched image per person (included in package price)</li>
+                <li>Both web-optimized and full-resolution versions</li>
+              </ul>
+              <p>Additional retouched images are available at <strong>$50 per image</strong>. Requests for additional retouching must be made within 14 days of delivery.</p>
+              <p>Images are stored on our servers for 90 days after delivery. After this period, we cannot guarantee retrieval. Please download and back up your images promptly.</p>
+            </div>
+
+            <div class="policy-section" id="usage">
+              <h2>Image Usage</h2>
+              <p>By booking a session with SpeedyHeadshots, you grant SpeedyHeadshots a non-exclusive, royalty-free licence to use your images for portfolio, marketing, and promotional purposes (website, social media, print materials).</p>
+              <p>If you do not wish to have your images used in our marketing, please notify us in writing before or at the time of your session. We will honour all opt-out requests.</p>
+              <p>You retain full rights to use your images for personal and professional purposes, including online profiles, press kits, publications, and marketing materials. Images may not be resold or licensed to third parties without written consent from SpeedyHeadshots.</p>
+              <div class="policy-callout">
+                <strong>Note on AI training:</strong> Images taken by SpeedyHeadshots may not be used to train artificial intelligence models without explicit written consent from both the photographer and the subject.
+              </div>
+            </div>
+
+            <div class="policy-section" id="retouching">
+              <h2>Retouching</h2>
+              <p>Standard retouching covers minor blemish removal, skin tone balancing, and basic light/colour correction. Our approach is intentionally natural and minimally invasive.</p>
+              <p>Advanced retouching (body reshaping, background replacement, composite work, or heavy skin smoothing) is available as an add-on service and is priced separately. Please request a quote.</p>
+              <p>Retouching requests or revision requests must be submitted within <strong>14 days</strong> of image delivery. Requests received after this period may be subject to additional charges.</p>
+              <p>We allow up to <strong>2 revision rounds</strong> per image at no additional charge. Further revisions are billed at $25 per image per round.</p>
+            </div>
+
+            <div class="policy-section" id="conduct">
+              <h2>Studio Conduct</h2>
+              <p>SpeedyHeadshots is committed to maintaining a professional, respectful, and safe environment for all clients, staff, and visiting team members.</p>
+              <ul>
+                <li>Disrespectful, discriminatory, or harassing behaviour toward staff or other clients will result in the immediate termination of the session without refund.</li>
+                <li>No smoking, vaping, or consumption of alcohol on the premises.</li>
+                <li>Children under 16 must be accompanied by a parent or guardian at all times.</li>
+                <li>Personal belongings are brought to the studio at your own risk. SpeedyHeadshots is not liable for lost or damaged items.</li>
+                <li>The studio space and equipment must be treated with care. Clients may be charged for damage caused during their session.</li>
+              </ul>
+              <p>We reserve the right to refuse service to anyone who does not comply with these guidelines.</p>
+            </div>
+
+            <div class="policy-section" id="liability">
+              <h2>Liability</h2>
+              <p>SpeedyHeadshots will make every effort to deliver high-quality images for every client. In the unlikely event of equipment failure, data loss, or other circumstances beyond our control, our liability is limited to a refund of the session fee or a complimentary reshoot — at our discretion.</p>
+              <p>We are not liable for any indirect, consequential, or special damages arising from the use or inability to use delivered images, including losses arising from missed business opportunities, publication deadlines, or investor presentations.</p>
+              <p>In all cases, our maximum liability is capped at the total amount paid for the session in question.</p>
+            </div>
+
+            <!-- Contact box -->
+            <div class="policy-contact-box">
+              <h3>Questions about this policy?</h3>
+              <p>We're always happy to clarify anything before you book. Reach out directly:</p>
+              <p>
+                <a href="mailto:hi@speedyheadshots.com">hi@speedyheadshots.com</a><br>
+                <a href="tel:13473661342">+1 (347) 366 1342</a>
+              </p>
+              <a href="/pricing/" class="btn btn-fill" style="margin-top:20px;display:inline-flex;">Book a Session →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>

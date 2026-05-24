@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Headshot Photographer Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Professional headshot photographer in Toronto. Corporate, LinkedIn, actor, and model headshots with 24-hour delivery. Studio in Regent Park. Book online.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    /* ── Page-specific styles ──────────────────────────── */
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - var(--nav-h));
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px, 8vw, 96px) var(--gutter);
+      padding-right: 0;
+      max-width: 580px;
+    }
+    .hero-copy h1 { margin-top: 16px; }
+    .hero-copy h1 em {
+      font-style: italic;
+      color: var(--warm);
+    }
+    .hero-sub {
+      margin-top: 24px;
+      font-size: 17px;
+      color: var(--mid);
+      max-width: 400px;
+      line-height: 1.65;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .hero-image {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Placeholder gradient when image loads */
+    .hero-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #e8e3dc 0%, #cfc8be 100%);
+      z-index: 0;
+    }
+    .hero-image img { position: relative; z-index: 1; }
+    /* Sample photos label */
+    .hero-image-label {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+      z-index: 2;
+    }
+
+    /* Gallery strip */
+    .gallery-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3px;
+    }
+    .gallery-strip-item {
+      aspect-ratio: 3/4;
+      background: var(--cream);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-strip-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s var(--ease);
+    }
+    .gallery-strip-item:hover img { transform: scale(1.04); }
+    .gallery-strip-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #d8d3cc 0%, #bfb8b0 100%);
+    }
+
+    /* Services grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .service-card {
+      background: var(--white);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: background .2s;
+      cursor: pointer;
+    }
+    .service-card:hover { background: var(--cream); }
+    .service-number {
+      font-family: var(--font-serif);
+      font-size: 13px;
+      color: var(--warm);
+    }
+    .service-card h3 { font-size: 24px; }
+    .service-card p { font-size: 14px; color: var(--mid); line-height: 1.6; }
+    .service-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: auto;
+      padding-top: 16px;
+      color: var(--black);
+    }
+
+    /* Why Us */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      margin-top: 64px;
+    }
+    .why-item {}
+    .why-number {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .why-item h4 { font-size: 18px; margin-bottom: 8px; }
+    .why-item p { font-size: 14px; color: var(--mid); line-height: 1.65; }
+
+    /* Testimonials */
+    .testimonials-section { background: var(--cream); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 36px 32px;
+    }
+    .testimonial-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 20px;
+    }
+    .testimonial-stars span {
+      font-size: 14px;
+      color: var(--warm);
+    }
+    .testimonial-card blockquote {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      font-weight: 300;
+      line-height: 1.55;
+      font-style: italic;
+      color: var(--black);
+    }
+    .testimonial-credit {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+    .testimonial-credit strong {
+      display: block;
+      font-weight: 600;
+      color: var(--black);
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    /* Pricing */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .pricing-card {
+      border: 1.5px solid var(--border);
+      padding: 40px 32px;
+      position: relative;
+    }
+    .pricing-card.featured {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+    .pricing-badge {
+      position: absolute;
+      top: -1px;
+      right: 28px;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+    }
+    .pricing-tier {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .pricing-tier { color: rgba(255,255,255,.5); }
+    .pricing-desc { font-size: 13px; color: var(--mid); margin-top: 4px; }
+    .pricing-card.featured .pricing-desc { color: rgba(255,255,255,.5); }
+    .pricing-price {
+      font-family: var(--font-serif);
+      font-size: 56px;
+      font-weight: 300;
+      line-height: 1;
+      margin: 24px 0 4px;
+    }
+    .pricing-unit { font-size: 13px; color: var(--mid); }
+    .pricing-card.featured .pricing-unit { color: rgba(255,255,255,.5); }
+    .pricing-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 28px 0;
+    }
+    .pricing-card.featured .pricing-divider { border-color: rgba(255,255,255,.15); }
+    .pricing-includes { display: flex; flex-direction: column; gap: 10px; }
+    .pricing-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    .pricing-includes li::before {
+      content: '—';
+      font-size: 12px;
+      color: var(--warm);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .pricing-card .btn { width: 100%; justify-content: center; margin-top: 32px; }
+    .pricing-card.featured .btn {
+      background: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+    .pricing-card.featured .btn:hover { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .pricing-note {
+      margin-top: 24px;
+      font-size: 12px;
+      color: var(--mid);
+      text-align: center;
+    }
+
+    /* What you get */
+    .delivery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 64px;
+      align-items: start;
+    }
+    .delivery-col h3 {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 28px;
+    }
+    .delivery-items { display: flex; flex-direction: column; gap: 16px; }
+    .delivery-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .delivery-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--warm);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+    .delivery-item p { font-size: 15px; line-height: 1.55; }
+    .delivery-item p strong { font-weight: 600; }
+
+    /* FAQ */
+    .faq-list { margin-top: 48px; }
+    .faq-item {
+      border-top: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 24px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--black);
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+      color: var(--mid);
+      transition: transform .25s var(--ease), background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--black); color: var(--white); border-color: var(--black); }
+    .faq-answer {
+      display: none;
+      padding: 0 0 24px;
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.7;
+      max-width: 680px;
+    }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* Brands */
+    .brands-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px, 4vw, 56px);
+      flex-wrap: wrap;
+      margin-top: 48px;
+      padding: 40px 0;
+      border: 1px solid var(--border);
+    }
+    .brand-placeholder {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--mid);
+      letter-spacing: .04em;
+      opacity: .5;
+    }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: var(--black);
+      color: var(--white);
+      text-align: center;
+      padding: clamp(64px, 10vw, 112px) var(--gutter);
+    }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.55); margin-top: 16px; font-size: 17px; }
+    .cta-banner .btn-warm { margin-top: 36px; font-size: 13px; padding: 16px 36px; }
+
+    /* ── Sticky booking bar ──────────────────────────────── */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 90;
+      background: var(--black);
+      color: var(--white);
+      padding: 14px var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transform: translateY(100%);
+      transition: transform .3s var(--ease);
+      border-top: 2px solid var(--warm);
+    }
+    .sticky-bar.visible { transform: translateY(0); }
+    .sticky-bar-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,.65);
+    }
+    .sticky-bar-copy strong { color: var(--white); font-weight: 600; }
+    .sticky-bar-actions { display: flex; gap: 10px; align-items: center; flex-shrink: 0; }
+    .sticky-bar .btn {
+      padding: 10px 20px;
+      font-size: 12px;
+      border-color: rgba(255,255,255,.3);
+      color: var(--white);
+    }
+    .sticky-bar .btn:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+    .sticky-bar .btn-warm { border-color: var(--warm); }
+    @media (max-width: 560px) {
+      .sticky-bar-copy { display: none; }
+      .sticky-bar { justify-content: center; }
+    }
+
+    /* ── Pricing toggle ──────────────────────────────────── */
+    .pricing-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .pricing-toggle {
+      display: flex;
+      background: var(--cream);
+      border: 1.5px solid var(--border);
+      padding: 4px;
+      gap: 2px;
+    }
+    .ptab {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .04em;
+      padding: 10px 24px;
+      border: none;
+      background: transparent;
+      color: var(--mid);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .ptab.active {
+      background: var(--black);
+      color: var(--white);
+    }
+    .pricing-team-intro {
+      margin: 24px 0 0;
+      font-size: 15px;
+      color: var(--mid);
+      max-width: 560px;
+      line-height: 1.6;
+      padding-bottom: 24px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .why-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-copy { padding-right: var(--gutter); max-width: 100%; }
+      .hero-image { height: 60vw; min-height: 320px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .delivery-grid { grid-template-columns: 1fr; gap: 48px; }
+      .gallery-strip { grid-template-columns: repeat(3, 1fr); }
+      .gallery-strip-item:nth-child(n+4) { display: none; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 20px; }
+      .gallery-strip { grid-template-columns: 1fr 1fr; }
+      .gallery-strip-item:nth-child(n+3) { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ─────────────────────────────────────────────── -->
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="hero" style="padding:0;border-top:none;">
+      <div class="hero-copy">
+        <span class="eyebrow">Toronto Headshot Photographer</span>
+        <h1>Photos that<br><em>open doors.</em></h1>
+        <p class="hero-sub">Professional headshots for executives, LinkedIn profiles, actors, and models. Studio in Regent Park. 24-hour delivery.</p>
+        <div class="hero-actions">
+          <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP" class="btn btn-fill" target="_blank" rel="noopener">
+            Book Mini Session — $250
+          </a>
+          <a href="/pricing/" class="btn">See All Pricing</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-stat">
+            <strong>24h</strong>
+            <span>Turnaround</span>
+          </div>
+          <div class="hero-stat">
+            <strong>20+</strong>
+            <span>Years experience</span>
+          </div>
+          <div class="hero-stat">
+            <strong>61MP</strong>
+            <span>Sony full-frame</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- Replace src with actual hero photo -->
+        <img
+          src="https://cloud-1de12d.becdn.net/media/original/wp-6ed1f2792b2b2fada5205ddb6103cb2b/image.jpg"
+          alt="Professional headshot example — SpeedyHeadshots Toronto"
+          loading="eager"
+        >
+        <span class="hero-image-label">© SpeedyHeadshots</span>
+      </div>
+    </section>
+
+    <!-- ── Photo strip ────────────────────────────────────── -->
+    <div class="gallery-strip" aria-label="Sample headshots">
+      <div class="gallery-strip-item">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=297&iH=297&oX=0&oY=0&cW=297&cH=297/wp-8421df33d03ae05b3598c2df2f11c841/image.jpg" alt="Headshot sample" loading="lazy">
+      </div>
+      <div class="gallery-strip-item">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=297&iH=297&oX=0&oY=0&cW=297&cH=297/wp-39a48674ec19048c1283d7bdb843e022/image.jpg" alt="Headshot sample" loading="lazy">
+      </div>
+      <div class="gallery-strip-item">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=297&iH=297&oX=0&oY=0&cW=297&cH=297/wp-ae9ebfe817d1ac18f621c728907132db/image.jpg" alt="Headshot sample" loading="lazy">
+      </div>
+      <div class="gallery-strip-item">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=297&iH=297&oX=0&oY=0&cW=297&cH=297/wp-865a25abf8d7315b7fb5569c1266c247/image.jpg" alt="Headshot sample" loading="lazy">
+      </div>
+      <div class="gallery-strip-item">
+        <img src="https://cloud-1de12d.becdn.net/media/iW=297&iH=297&oX=0&oY=0&cW=297&cH=297/wp-fbd420b188d945cfa399c1e8ead33d7b/image.jpg" alt="Headshot sample" loading="lazy">
+      </div>
+    </div>
+
+    <!-- ── Services ───────────────────────────────────────── -->
+    <section id="services">
+      <div class="container">
+        <span class="eyebrow">What We Shoot</span>
+        <h2 class="mt-16" style="max-width:560px">Every kind of headshot, <em class="serif" style="font-style:italic">done right.</em></h2>
+        <div class="services-grid">
+          <a href="/corporate/" class="service-card">
+            <span class="service-number">01</span>
+            <h3>Corporate</h3>
+            <p>Teams, executives, and company-wide headshots. We come to you or you come to us.</p>
+            <span class="service-arrow">Learn more →</span>
+          </a>
+          <a href="/linkedin/" class="service-card">
+            <span class="service-number">02</span>
+            <h3>LinkedIn</h3>
+            <p>A great profile photo changes everything. 15–20 minute sessions, same-day proofs.</p>
+            <span class="service-arrow">Learn more →</span>
+          </a>
+          <a href="/actor/" class="service-card">
+            <span class="service-number">03</span>
+            <h3>Actor</h3>
+            <p>Industry-standard shots with creative options: gels, smoke, and editorial flair.</p>
+            <span class="service-arrow">Learn more →</span>
+          </a>
+          <a href="/model/" class="service-card">
+            <span class="service-number">04</span>
+            <h3>Model</h3>
+            <p>Portfolio builds for agency submissions. Nils has shot for the world's biggest fashion brands.</p>
+            <span class="service-arrow">Learn more →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Why Us ──────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Why SpeedyHeadshots</span>
+        <h2 class="mt-16" style="max-width:480px">Built for people who <em class="serif" style="font-style:italic">don't waste time.</em></h2>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-number">01</div>
+            <h4>24-Hour Delivery</h4>
+            <p>Shoot today, retouched images delivered tomorrow. We've turned around shots for investor presentations in under 12 hours.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-number">02</div>
+            <h4>20 Years of Experience</h4>
+            <p>From Grammy-winning artists to Fortune 500 teams. Nils has shot covers, billboards, and celebrity portraits worldwide.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-number">03</div>
+            <h4>61MP Sony Full-Frame</h4>
+            <p>State-of-the-art Sony G-Master glass. Images sharp enough to print on a billboard — or a business card, your call.</p>
+          </div>
+          <div class="why-item">
+            <div class="why-number">04</div>
+            <h4>High-End Retouching</h4>
+            <p>Natural-looking, minimally invasive. We remove small blemishes and make adjustments so subtle you'll forget we were there.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Brands ──────────────────────────────────────────── -->
+    <section style="padding:0;">
+      <div class="container">
+        <span class="eyebrow" style="display:block;text-align:center;padding-top:clamp(40px,6vw,64px)">Brands We've Worked With</span>
+        <div class="brands-row">
+          <!-- Replace with actual brand logos; placeholders for now -->
+          <span class="brand-placeholder">Shopify</span>
+          <span class="brand-placeholder">RBC</span>
+          <span class="brand-placeholder">KPMG</span>
+          <span class="brand-placeholder">Deloitte</span>
+          <span class="brand-placeholder">TD Bank</span>
+          <span class="brand-placeholder">Hootsuite</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Testimonials ────────────────────────────────────── -->
+    <section class="testimonials-section">
+      <div class="container">
+        <span class="eyebrow">What Clients Say</span>
+        <h2 class="mt-16">Real reviews.</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote>"Hands down the best photography team I've ever worked with. Nils knew how to handle our most senior staff and made them feel at ease. We got headshots of over 40 people and everyone loved theirs."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Kate Wisman</strong>
+              Marketing Director
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote>"The SpeedyHeadshots team helped us create a cohesive set of headshots for our sales and client-facing teams. We asked for specific details — they delivered promptly."</blockquote>
+            <div class="testimonial-credit">
+              <strong>Yoon Chung</strong>
+              Founder
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+            </div>
+            <blockquote>"We reached out Tuesday, shot Thursday morning, and had retouched images Thursday afternoon in time for our investor presentation. Pricing was great too."</blockquote>
+            <div class="testimonial-credit">
+              <strong>David Kim</strong>
+              CEO
+            </div>
+          </div>
+        </div>
+        <p class="pricing-note mt-40">
+          <a href="https://g.page/r/CV1X4c5bt7PuEBM/review" target="_blank" rel="noopener" style="color:var(--mid);border-bottom:1px solid var(--border);">Leave us a review on Google →</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Pricing ─────────────────────────────────────────── -->
+    <section id="pricing">
+      <div class="container">
+        <span class="eyebrow">Pricing</span>
+        <div class="pricing-header">
+          <h2 class="mt-16">Straightforward pricing.</h2>
+          <!-- Toggle -->
+          <div class="pricing-toggle" role="tablist" aria-label="Pricing type">
+            <button class="ptab active" role="tab" aria-selected="true" data-target="pricing-individual">
+              Just me
+            </button>
+            <button class="ptab" role="tab" aria-selected="false" data-target="pricing-team">
+              My team
+            </button>
+          </div>
+        </div>
+
+        <!-- ── Individual track ── -->
+        <div id="pricing-individual" class="pricing-track">
+          <div class="pricing-grid">
+
+            <div class="pricing-card">
+              <div class="pricing-tier">Mini</div>
+              <p class="pricing-desc">LinkedIn, quick update</p>
+              <div class="pricing-price">$250</div>
+              <p class="pricing-unit">per session, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>20 min shoot</li>
+                <li>1 lighting setup, 1 backdrop</li>
+                <li>1 retouched image</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+                 class="btn" target="_blank" rel="noopener">Book Mini — $250</a>
+            </div>
+
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Most Popular</div>
+              <div class="pricing-tier">Professional</div>
+              <p class="pricing-desc">Website, press kit, branding</p>
+              <div class="pricing-price">$385</div>
+              <p class="pricing-unit">per session, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>45 min shoot</li>
+                <li>2 lighting setups, 1 backdrop</li>
+                <li>2 retouched images</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/4BDB3ZC4KYXA2KA7DZDGXX6Y"
+                 class="btn" target="_blank" rel="noopener">Book Professional — $385</a>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-tier">Executive</div>
+              <p class="pricing-desc">CXO, speaker, full presence</p>
+              <div class="pricing-price">$550</div>
+              <p class="pricing-unit">per session, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>120 min shoot</li>
+                <li>3 lighting setups, 3 backdrops</li>
+                <li>5 retouched images</li>
+                <li>On-location within GTA included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/CKKWUCKSQDB46E63VHKKI7W2"
+                 class="btn" target="_blank" rel="noopener">Book Executive — $550</a>
+            </div>
+
+          </div>
+          <p class="pricing-note">Actor headshots start at $250. <a href="/pricing/" style="color:var(--black);border-bottom:1px solid var(--border);">See all packages →</a></p>
+        </div>
+
+        <!-- ── Team track ── -->
+        <div id="pricing-team" class="pricing-track" style="display:none;">
+          <p class="pricing-team-intro">
+            Per-person rates — we come to your office or you come to our studio.
+            Rates apply when booking <strong>4 or more people</strong>.
+          </p>
+          <div class="pricing-grid">
+
+            <div class="pricing-card">
+              <div class="pricing-tier">Startup</div>
+              <p class="pricing-desc">4–9 team members</p>
+              <div class="pricing-price">$175</div>
+              <p class="pricing-unit">per person, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>~20 min per person</li>
+                <li>We come to you (Toronto)</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/7GHXUGJ2Y36EJUTDGMNKKBY6"
+                 class="btn" target="_blank" rel="noopener">Book Startup</a>
+            </div>
+
+            <div class="pricing-card featured">
+              <div class="pricing-badge">Best Value</div>
+              <div class="pricing-tier">Business</div>
+              <p class="pricing-desc">10–19 team members</p>
+              <div class="pricing-price">$150</div>
+              <p class="pricing-unit">per person, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>~20 min per person</li>
+                <li>We come to you (Toronto)</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/IBANQN5KXDO2CHL7GQWBVCNX"
+                 class="btn" target="_blank" rel="noopener">Book Business</a>
+            </div>
+
+            <div class="pricing-card">
+              <div class="pricing-tier">Enterprise</div>
+              <p class="pricing-desc">20+ team members</p>
+              <div class="pricing-price">$125</div>
+              <p class="pricing-unit">per person, + HST</p>
+              <hr class="pricing-divider">
+              <ul class="pricing-includes">
+                <li>~20 min per person</li>
+                <li>We come to you (Toronto)</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/MFBRQ7ZKZ6OEFM7FP4FTAZWN"
+                 class="btn" target="_blank" rel="noopener">Book Enterprise</a>
+            </div>
+
+          </div>
+          <p class="pricing-note">
+            Need a full day? Day rate $2,750 flat — unlimited team members.
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/FQF3G5OVO34Q4CCGB5RS5B3P"
+               style="color:var(--black);border-bottom:1px solid var(--border);" target="_blank" rel="noopener">Book day rate →</a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── What You Get ────────────────────────────────────── -->
+    <section style="background:var(--cream);">
+      <div class="container">
+        <span class="eyebrow">What's Included</span>
+        <h2 class="mt-16">No surprises.</h2>
+        <div class="delivery-grid">
+          <div class="delivery-col">
+            <h3>On the day</h3>
+            <div class="delivery-items">
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>~20 minutes per person</strong> — enough time to get comfortable, try looks, and nail the shot.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>Live proofing on screen</strong> — you see your shots in real-time, so there are no surprises at delivery.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>Unlimited looks and shots</strong> — change outfits, try different backgrounds, ask for anything.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>Posing guidance throughout</strong> — we direct, you don't have to figure out what to do with your hands.</p>
+              </div>
+            </div>
+          </div>
+          <div class="delivery-col">
+            <h3>After the shoot</h3>
+            <div class="delivery-items">
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>1 fully retouched image</strong> included per person. Additional images available at $50 each.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>Contact sheet of all images</strong> if you don't make final selections on shoot day.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>Google Drive link</strong> with web-optimized and full high-res versions for every team member.</p>
+              </div>
+              <div class="delivery-item">
+                <div class="delivery-dot"></div>
+                <p><strong>24-hour turnaround</strong> for teams up to 10. Larger teams within 48 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ────────────────────────────────────────────── -->
+    <section>
+      <div class="container" style="max-width:800px;">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-16">Common questions.</h2>
+        <div class="faq-list" id="faq">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What should I wear to my session?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Wear what you'd normally wear to work. A suit, scrubs, or a favourite outfit you'd wear on set — it all works. You look most natural in something you're already comfortable in, and that always shows in the final images.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How long does a session take?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Personal and LinkedIn sessions take about 15–20 minutes. Executive sessions vary from one hour to half a day depending on the number of locations and looks. Corporate team shoots are scheduled based on headcount — we'll plan the day with you in advance.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How do I choose my final images?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              For studio and office shoots, the camera is tethered to a laptop so you can see shots as they're taken and select favourites on the spot. If there's a larger number of images to review, we'll send a contact sheet via Google Drive for you to make selections from.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              How many images will I receive?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Every package includes at least one professionally retouched image. Additional retouched images are available at $50 each. All unretouched digital images from the session are always included in the delivery — no exceptions.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              Do you offer on-location shoots?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. We can come to your office or any location in the Greater Toronto Area. Travel fees may apply depending on distance. We bring a full portable studio setup — lights, backdrops, tethering rig.
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              What's your cancellation policy?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Full details are in our <a href="/studio-policy/" style="color:var(--black);border-bottom:1px solid currentColor;">Studio Policy</a>. In short: cancellations with 48+ hours' notice can be rescheduled free of charge. Late cancellations or no-shows may be subject to a fee.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Banner ──────────────────────────────────────── -->
+    <section class="cta-banner" style="border-top:none;">
+      <h2>Ready for a headshot<br>you're <em>proud to use?</em></h2>
+      <p>Book online in 60 seconds. We'll confirm your slot by email.</p>
+      <a href="/pricing/" class="btn btn-warm">Book a Session</a>
+    </section>
+
+  </main>
+
+  <!-- ── Sticky booking bar ─────────────────────────────── -->
+  <div class="sticky-bar" id="sticky-bar" role="complementary" aria-label="Quick book">
+    <span class="sticky-bar-copy">
+      <strong>Individual sessions from $250.</strong> 20-min LinkedIn shoot to full executive session.
+    </span>
+    <div class="sticky-bar-actions">
+      <a href="/pricing/" class="btn">All Pricing</a>
+      <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+         class="btn btn-warm" target="_blank" rel="noopener">Book Mini — $250</a>
+    </div>
+  </div>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <div id="site-footer"></div>
+
+  <!-- ── Scripts ────────────────────────────────────────── -->
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+  <script>
+    /* FAQ accordion */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+
+    /* Pricing toggle */
+    document.querySelectorAll('.ptab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.ptab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+
+        const target = tab.dataset.target;
+        document.querySelectorAll('.pricing-track').forEach(t => {
+          t.style.display = t.id === target ? 'block' : 'none';
+        });
+
+        /* Update sticky bar copy for team view */
+        const bar = document.getElementById('sticky-bar');
+        const barCopy = bar.querySelector('.sticky-bar-copy');
+        const barBtn  = bar.querySelector('.btn-warm');
+        if (target === 'pricing-team') {
+          barCopy.innerHTML = '<strong>Team headshots from $175/person.</strong> We come to your office.';
+          barBtn.textContent = 'Get Team Quote';
+          barBtn.href = 'mailto:hi@speedyheadshots.com';
+          barBtn.removeAttribute('target');
+        } else {
+          barCopy.innerHTML = '<strong>Individual sessions from $250.</strong> 20-min LinkedIn shoot to full executive session.';
+          barBtn.innerHTML = 'Book Mini — $250';
+          barBtn.href = 'https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP';
+          barBtn.setAttribute('target', '_blank');
+        }
+      });
+    });
+
+    /* Sticky bar — show after scrolling past hero */
+    const stickyBar = document.getElementById('sticky-bar');
+    const heroEl    = document.querySelector('.hero');
+    const observer  = new IntersectionObserver(
+      ([entry]) => stickyBar.classList.toggle('visible', !entry.isIntersecting),
+      { threshold: 0 }
+    );
+    if (heroEl) observer.observe(heroEl);
+  </script>
+
+</body>
+</html>
