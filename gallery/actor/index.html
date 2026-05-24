@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actor Headshot Gallery | SpeedyHeadshots Toronto</title>
+  <meta name="description" content="Browse our actor headshot portfolio. Industry-standard actor photos for Toronto casting submissions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+    .gallery-hero { padding: clamp(56px,8vw,96px) 0 clamp(32px,5vw,56px); border-bottom: 1px solid var(--border); }
+    .gallery-hero h1 { max-width: 560px; margin-top: 12px; }
+    .gallery-hero p { margin-top: 16px; font-size: 17px; color: var(--mid); max-width: 480px; line-height: 1.65; }
+    .gallery-tabs { display: flex; gap: 0; margin-top: 32px; border-bottom: 1px solid var(--border); }
+    .gallery-tab { font-size: 12px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; padding: 12px 24px; color: var(--mid); border-bottom: 2px solid transparent; margin-bottom: -1px; transition: color .15s, border-color .15s; text-decoration: none; }
+    .gallery-tab.active { color: var(--black); border-bottom-color: var(--warm); }
+    .gallery-tab:hover { color: var(--black); }
+    .gallery-grid { padding: clamp(40px,6vw,72px) 0; }
+    .masonry { columns: 3; column-gap: 3px; }
+    .masonry-item { break-inside: avoid; margin-bottom: 3px; overflow: hidden; display: block; position: relative; }
+    .masonry-item img { width: 100%; display: block; transition: transform .5s cubic-bezier(.25,.46,.45,.94); }
+    .masonry-item:hover img { transform: scale(1.04); }
+    .masonry-item::after { content: ''; position: absolute; inset: 0; background: rgba(27,63,122,0); transition: background .3s; pointer-events: none; }
+    .masonry-item:hover::after { background: rgba(27,63,122,.1); }
+    .gallery-cta { text-align: center; padding: clamp(48px,8vw,80px) 0; border-top: 1px solid var(--border); }
+    .gallery-cta h2 { max-width: 480px; margin: 0 auto 16px; }
+    .gallery-cta p { color: var(--mid); margin-bottom: 32px; font-size: 16px; }
+    @media (max-width: 768px) { .masonry { columns: 2; } }
+    @media (max-width: 480px) { .masonry { columns: 1; } }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="page-body">
+
+    <section class="gallery-hero" style="padding-bottom:0;border:none;">
+      <div class="container">
+        <span class="eyebrow">Gallery — Actor</span>
+        <h1>Actor headshots.</h1>
+        <p>Industry-standard shots for casting submissions, agent packages, and full lookbooks. Studio and creative options available.</p>
+        <nav class="gallery-tabs" aria-label="Gallery categories">
+          <a href="/gallery/corporate/" class="gallery-tab ">Corporate</a>
+          <a href="/gallery/modeling/" class="gallery-tab ">Modeling</a>
+          <a href="/gallery/actor/" class="gallery-tab active">Actor</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="gallery-grid">
+      <div class="container">
+        <div class="masonry">
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-6ed1f2792b2b2fada5205ddb6103cb2b/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-8421df33d03ae05b3598c2df2f11c841/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-39a48674ec19048c1283d7bdb843e022/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-ae9ebfe817d1ac18f621c728907132db/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-865a25abf8d7315b7fb5569c1266c247/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-fbd420b188d945cfa399c1e8ead33d7b/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-83ac96c80d9d13051f50c6148f97e041/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-f1623dfbb307ab606ed697ef2be6dd82/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-062b13bbf4e6635513c7cf5996b4aa0c/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/wp-2db523d6d769f27cb60ca1df7ffc3557/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/5a69514d14c6baad0300802e226a2ca6/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+          <div class="masonry-item"><img src="https://cloud-1de12d.becdn.net/media/iW=800&iH=any/a457500554aafcdd2fe15e95bcbad2b0/image.jpg" alt="Corporate headshot Toronto" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-cta">
+      <div class="container">
+        <h2>Like what you see?</h2>
+        <p>Book your session online — most clients are in and out in under 30 minutes.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+          <a href="/pricing/" class="btn btn-fill">See Pricing</a>
+          <a href="/contact/" class="btn">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>

@@ -33,6 +33,13 @@
         </div>
 
         <div class="footer-col">
+          <h5>Gallery</h5>
+          <a href="/gallery/corporate/">Corporate Headshots</a>
+          <a href="/gallery/modeling/">Modeling</a>
+          <a href="/gallery/actor/">Actor Headshots</a>
+        </div>
+
+        <div class="footer-col">
           <h5>Studio</h5>
           <a href="/contact/">Contact</a>
           <a href="/contact/#location">Our Studio</a>
