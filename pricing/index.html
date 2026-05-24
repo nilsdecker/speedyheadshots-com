@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Headshot Pricing Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Transparent headshot pricing in Toronto. Individual sessions from $250. Corporate team rates from $125/person. Actor and modeling packages available.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/pricing/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <style>
+
+    /* ── Hero ─────────────────────────────────────────────── */
+    .pricing-hero {
+      padding: clamp(56px,8vw,96px) 0 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pricing-hero h1 { max-width: 600px; }
+    .pricing-hero p { margin-top: 16px; font-size: 18px; color: var(--mid); max-width: 480px; line-height: 1.65; }
+
+    /* ── Track toggle ─────────────────────────────────────── */
+    .track-toggle {
+      display: flex;
+      gap: 3px;
+      margin-top: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .track-tab {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 16px 32px;
+      border: none;
+      background: transparent;
+      color: var(--mid);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color .15s, border-color .15s;
+    }
+    .track-tab.active { color: var(--black); border-bottom-color: var(--warm); }
+    .track-tab:hover { color: var(--black); }
+
+    /* ── Section label ────────────────────────────────────── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .section-label h2 { margin: 0; }
+    .section-label p { font-size: 15px; color: var(--mid); margin-top: 6px; line-height: 1.5; }
+
+    /* ── Individual: category tabs ────────────────────────── */
+    .cat-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+    .cat-tab {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--mid);
+      cursor: pointer;
+      transition: all .15s;
+    }
+    .cat-tab.active, .cat-tab:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    /* ── Card grid ────────────────────────────────────────── */
+    .cards-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+    }
+    .p-card {
+      border: 1.5px solid var(--border);
+      padding: 36px 28px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .p-card.dark {
+      border-color: var(--black);
+      background: var(--black);
+      color: var(--white);
+    }
+    .p-badge {
+      position: absolute;
+      top: -1px; right: 20px;
+      background: var(--warm);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+    }
+    .p-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3px;
+    }
+    .p-card.dark .p-type { color: rgba(255,255,255,.4); }
+    .p-subtitle { font-size: 13px; color: var(--mid); line-height: 1.4; }
+    .p-card.dark .p-subtitle { color: rgba(255,255,255,.4); }
+    .p-price {
+      font-family: var(--font-serif);
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1;
+      margin: 18px 0 3px;
+    }
+    .p-unit { font-size: 12px; color: var(--mid); }
+    .p-card.dark .p-unit { color: rgba(255,255,255,.4); }
+    .p-rule { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+    .p-card.dark .p-rule { border-color: rgba(255,255,255,.1); }
+    .p-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+    .p-list li { font-size: 13px; color: var(--mid); line-height: 1.45; padding-left: 14px; position: relative; }
+    .p-card.dark .p-list li { color: rgba(255,255,255,.55); }
+    .p-list li::before { content: '—'; position: absolute; left: 0; color: var(--warm); font-size: 10px; top: 1px; }
+    .p-card .btn { width: 100%; justify-content: center; margin-top: 24px; font-size: 12px; }
+    .p-card.dark .btn { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .p-card.dark .btn:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+
+    /* ── Day rate card — full width ───────────────────────── */
+    .dayrate-card {
+      border: 1px solid var(--border);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-top: 2px;
+      flex-wrap: wrap;
+    }
+    .dayrate-left { display: flex; align-items: baseline; gap: 16px; }
+    .dayrate-price { font-family: var(--font-serif); font-size: 48px; font-weight: 300; line-height: 1; }
+    .dayrate-details { display: flex; flex-direction: column; gap: 3px; }
+    .dayrate-details strong { font-size: 15px; font-weight: 600; }
+    .dayrate-details span { font-size: 13px; color: var(--mid); }
+    .dayrate-card .btn { flex-shrink: 0; }
+
+    /* ── Always included ──────────────────────────────────── */
+    .included-section { background: var(--black); color: var(--white); }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,.07);
+      margin-top: 48px;
+    }
+    .included-item {
+      background: var(--black);
+      padding: 32px 24px;
+    }
+    .included-icon {
+      font-size: 24px;
+      margin-bottom: 14px;
+      display: block;
+    }
+    .included-item h4 { font-size: 16px; color: var(--white); margin-bottom: 8px; }
+    .included-item p { font-size: 13px; color: rgba(255,255,255,.45); line-height: 1.65; }
+
+    /* ── Add-ons ──────────────────────────────────────────── */
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .addon-item {
+      background: var(--white);
+      padding: 28px 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .addon-price {
+      font-family: var(--font-serif);
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1;
+      color: var(--warm);
+      flex-shrink: 0;
+      min-width: 72px;
+    }
+    .addon-item h4 { font-size: 15px; font-weight: 600; margin-bottom: 5px; }
+    .addon-item p { font-size: 13px; color: var(--mid); line-height: 1.6; }
+
+    /* ── FAQ ──────────────────────────────────────────────── */
+    .faq-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 80px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .faq-item { border-top: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-question {
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+      gap: 24px; padding: 20px 0; background: none; border: none; cursor: pointer;
+      text-align: left; font-family: var(--font-serif); font-size: 17px; color: var(--black);
+    }
+    .faq-icon {
+      flex-shrink: 0; width: 22px; height: 22px; border: 1px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--mid); transition: transform .25s, background .2s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--black); color: var(--white); border-color: var(--black); }
+    .faq-answer { display: none; padding: 0 0 20px; font-size: 14px; color: var(--mid); line-height: 1.75; }
+    .faq-item.open .faq-answer { display: block; }
+
+    /* ── CTA ──────────────────────────────────────────────── */
+    .cta-banner { background: var(--black); color: var(--white); text-align: center; padding: clamp(64px,10vw,112px) var(--gutter); }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.5); margin-top: 14px; font-size: 16px; max-width: 440px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
+    .cta-actions .btn { padding: 14px 32px; }
+    .cta-actions .btn-warm { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .cta-actions .btn-warm:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .cta-actions .btn-ghost { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .cta-actions .btn-ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 1100px) {
+      .included-grid { grid-template-columns: 1fr 1fr; }
+      .cards-4 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 860px) {
+      .cards-3 { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr 1fr; }
+      .faq-2col { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .cards-4 { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .included-grid { grid-template-columns: 1fr; }
+      .dayrate-card { flex-direction: column; gap: 20px; }
+      .dayrate-card .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="site-nav"></div>
+
+  <main class="page-body">
+
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="pricing-hero" style="border:none;">
+      <div class="container">
+        <span class="eyebrow">Pricing</span>
+        <h1>Everything on<br><em class="serif" style="font-style:italic">one page.</em></h1>
+        <p>All sessions, all packages, no surprises. Prices in CAD, excluding HST.</p>
+
+        <!-- Track toggle -->
+        <div class="track-toggle" role="tablist">
+          <button class="track-tab active" role="tab" aria-selected="true" data-target="track-individual">
+            Just me
+          </button>
+          <button class="track-tab" role="tab" aria-selected="false" data-target="track-team">
+            My team
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════
+         INDIVIDUAL TRACK
+    ══════════════════════════════════════════════════════ -->
+    <div id="track-individual">
+
+      <!-- Corporate / LinkedIn ────────────────────────────── -->
+      <section id="corporate-linkedin">
+        <div class="container">
+          <div class="section-label">
+            <div>
+              <span class="eyebrow">Corporate & LinkedIn</span>
+              <h2 class="mt-16" style="font-size:clamp(28px,4vw,44px);">Professional sessions</h2>
+              <p>For executives, professionals, and anyone who needs a headshot that works.<br>Studio in Regent Park. 24-hour delivery.</p>
+            </div>
+          </div>
+          <div class="cards-3">
+
+            <div class="p-card">
+              <div class="p-type">Mini</div>
+              <p class="p-subtitle">LinkedIn, quick update</p>
+              <div class="p-price">$250</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>20 min shoot</li>
+                <li>1 lighting setup, 1 backdrop</li>
+                <li>1 retouched image</li>
+                <li>All digitals included</li>
+                <li>24h delivery</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+                 class="btn" target="_blank" rel="noopener">Book Mini</a>
+            </div>
+
+            <div class="p-card dark">
+              <div class="p-badge">Most Popular</div>
+              <div class="p-type">Professional</div>
+              <p class="p-subtitle">Website, personal brand</p>
+              <div class="p-price">$385</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>45 min shoot</li>
+                <li>2 lighting setups, 1 backdrop</li>
+                <li>2 retouched images</li>
+                <li>Multiple looks</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/4BDB3ZC4KYXA2KA7DZDGXX6Y"
+                 class="btn" target="_blank" rel="noopener">Book Professional</a>
+            </div>
+
+            <div class="p-card">
+              <div class="p-type">Executive</div>
+              <p class="p-subtitle">CXO, speaker, full presence</p>
+              <div class="p-price">$550</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>120 min shoot</li>
+                <li>3 lighting setups, 3 backdrops</li>
+                <li>5 retouched images</li>
+                <li>On-location within GTA included</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/CKKWUCKSQDB46E63VHKKI7W2"
+                 class="btn" target="_blank" rel="noopener">Book Executive</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div style="border-top:1px solid var(--border);"></div>
+
+      <!-- Actor ───────────────────────────────────────────── -->
+      <section id="actor">
+        <div class="container">
+          <span class="eyebrow">Actor Headshots</span>
+          <h2 class="mt-16" style="font-size:clamp(28px,4vw,44px);">Actor packages</h2>
+          <p style="margin-top:8px;font-size:15px;color:var(--mid);max-width:520px;">
+            Trusted by Grammy winners and Hollywood actors. Creative lighting options available on Broadway Theatre and Hollywood Rockstar.
+            <a href="/actor/" style="color:var(--black);border-bottom:1px solid var(--border);margin-left:6px;">Learn more →</a>
+          </p>
+          <div class="cards-3" style="margin-top:40px;">
+
+            <div class="p-card">
+              <div class="p-type">Stage Extra</div>
+              <p class="p-subtitle">New submission, quick update</p>
+              <div class="p-price">$250</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>30 min shoot</li>
+                <li>1 lighting setup, 1 look</li>
+                <li>1 retouched image</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/3F3BCBCR54ZW7PAACNN5AVTV"
+                 class="btn" target="_blank" rel="noopener">Book Stage Extra</a>
+            </div>
+
+            <div class="p-card dark">
+              <div class="p-badge">Most Popular</div>
+              <div class="p-type">Broadway Theatre</div>
+              <p class="p-subtitle">Build your range</p>
+              <div class="p-price">$500</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>90 min shoot</li>
+                <li>2 lighting setups, 3 looks</li>
+                <li>3 retouched images</li>
+                <li>Creative options available</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/V7LLZ5HKRSAAEX43RZSFRY4F"
+                 class="btn" target="_blank" rel="noopener">Book Broadway Theatre</a>
+            </div>
+
+            <div class="p-card">
+              <div class="p-type">Hollywood Rockstar</div>
+              <p class="p-subtitle">Full lookbook refresh</p>
+              <div class="p-price">$675</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>3 hour shoot</li>
+                <li>Unlimited looks & setups</li>
+                <li>5 retouched images</li>
+                <li>Gels, smoke, creative lighting</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/A24HNJKNVKVL6FZGKU6P5KRG"
+                 class="btn" target="_blank" rel="noopener">Book Hollywood Rockstar</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div style="border-top:1px solid var(--border);"></div>
+
+      <!-- Modeling ─────────────────────────────────────────── -->
+      <section id="modeling">
+        <div class="container">
+          <span class="eyebrow">Modeling Portfolio</span>
+          <h2 class="mt-16" style="font-size:clamp(28px,4vw,44px);">Modeling packages</h2>
+          <p style="margin-top:8px;font-size:15px;color:var(--mid);max-width:520px;">
+            Fashion, editorial, agency submissions, and test shoots. Shot by a photographer with 20+ years of international fashion experience.
+            <a href="/model/" style="color:var(--black);border-bottom:1px solid var(--border);margin-left:6px;">Learn more →</a>
+          </p>
+          <div class="cards-3" style="margin-top:40px;">
+
+            <div class="p-card">
+              <div class="p-type">Mini</div>
+              <p class="p-subtitle">Agency submission, first portfolio</p>
+              <div class="p-price">$175</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>30 min shoot</li>
+                <li>1 look</li>
+                <li>1 retouched image</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="/contact/" class="btn">Book Mini</a>
+            </div>
+
+            <div class="p-card dark">
+              <div class="p-badge">Most Popular</div>
+              <div class="p-type">Look Book</div>
+              <p class="p-subtitle">Build your book, develop range</p>
+              <div class="p-price">$475</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>90 min shoot</li>
+                <li>3 looks, multiple backdrops</li>
+                <li>3 retouched images</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="/contact/" class="btn">Book Look Book</a>
+            </div>
+
+            <div class="p-card">
+              <div class="p-type">Editorial</div>
+              <p class="p-subtitle">Full creative production</p>
+              <div class="p-price">$675</div>
+              <p class="p-unit">per session + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>3–4 hour shoot</li>
+                <li>Unlimited looks</li>
+                <li>Full creative direction</li>
+                <li>$35/image retouching chosen</li>
+              </ul>
+              <a href="/contact/" class="btn">Book Editorial</a>
+            </div>
+
+          </div>
+          <p style="margin-top:16px;font-size:13px;color:var(--mid);">Additional retouching: $35/image (editorial), $50/image (beauty).</p>
+        </div>
+      </section>
+
+    </div><!-- end track-individual -->
+
+    <!-- ══════════════════════════════════════════════════════
+         TEAM TRACK
+    ══════════════════════════════════════════════════════ -->
+    <div id="track-team" style="display:none;">
+      <section>
+        <div class="container">
+          <span class="eyebrow">Corporate Team Pricing</span>
+          <h2 class="mt-16" style="font-size:clamp(28px,4vw,44px);">Per-person rates.</h2>
+          <p style="margin-top:8px;font-size:15px;color:var(--mid);max-width:560px;">
+            We come to your office. All rates include travel within Toronto, full portable studio setup, ~20 min per person, 1 retouched image, and Google Drive delivery.
+            Rates apply when booking <strong>4 or more people</strong>.
+          </p>
+          <div class="cards-4" style="margin-top:40px;">
+
+            <div class="p-card">
+              <div class="p-type">Startup</div>
+              <p class="p-subtitle">4–9 team members</p>
+              <div class="p-price">$175</div>
+              <p class="p-unit">per person + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>~20 min per person</li>
+                <li>We come to you</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+                <li>24h delivery</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/7GHXUGJ2Y36EJUTDGMNKKBY6"
+                 class="btn" target="_blank" rel="noopener">Book Startup</a>
+            </div>
+
+            <div class="p-card dark">
+              <div class="p-badge">Best Value</div>
+              <div class="p-type">Business</div>
+              <p class="p-subtitle">10–19 team members</p>
+              <div class="p-price">$150</div>
+              <p class="p-unit">per person + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>~20 min per person</li>
+                <li>We come to you</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+                <li>24h delivery</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/IBANQN5KXDO2CHL7GQWBVCNX"
+                 class="btn" target="_blank" rel="noopener">Book Business</a>
+            </div>
+
+            <div class="p-card">
+              <div class="p-type">Enterprise</div>
+              <p class="p-subtitle">20+ team members</p>
+              <div class="p-price">$125</div>
+              <p class="p-unit">per person + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>~20 min per person</li>
+                <li>We come to you</li>
+                <li>1 retouched image per person</li>
+                <li>All digitals included</li>
+                <li>24h delivery</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/MFBRQ7ZKZ6OEFM7FP4FTAZWN"
+                 class="btn" target="_blank" rel="noopener">Book Enterprise</a>
+            </div>
+
+            <div class="p-card">
+              <div class="p-type">Day Rate</div>
+              <p class="p-subtitle">Unlimited team members</p>
+              <div class="p-price">$2,750</div>
+              <p class="p-unit">flat rate + HST</p>
+              <hr class="p-rule">
+              <ul class="p-list">
+                <li>Full day (up to 8 hours)</li>
+                <li>We come to you</li>
+                <li>1 retouched image per person</li>
+                <li>Best for 25+ people</li>
+                <li>All digitals included</li>
+              </ul>
+              <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/FQF3G5OVO34Q4CCGB5RS5B3P"
+                 class="btn" target="_blank" rel="noopener">Book Day Rate</a>
+            </div>
+
+          </div>
+          <p style="margin-top:18px;font-size:13px;color:var(--mid);text-align:center;">
+            Not sure which tier fits? <a href="mailto:hi@speedyheadshots.com?subject=Team%20Headshot%20Quote" style="color:var(--black);border-bottom:1px solid var(--border);">Email us your headcount →</a>
+          </p>
+        </div>
+      </section>
+    </div><!-- end track-team -->
+
+    <!-- ── Always included ────────────────────────────────── -->
+    <section class="included-section">
+      <div class="container">
+        <span class="eyebrow" style="color:rgba(255,255,255,.35)">Every Session</span>
+        <h2 class="mt-16" style="color:var(--white);max-width:480px">Always included,<br><em class="serif" style="font-style:italic;color:var(--warm)">always free.</em></h2>
+        <div class="included-grid">
+          <div class="included-item">
+            <span class="included-icon">📸</span>
+            <h4>All digital images</h4>
+            <p>Every shot from the session delivered unretouched. Yours to keep, no additional charge.</p>
+          </div>
+          <div class="included-item">
+            <span class="included-icon">🖥</span>
+            <h4>Live preview on set</h4>
+            <p>Camera tethered to a laptop throughout. You see exactly what we're capturing in real time.</p>
+          </div>
+          <div class="included-item">
+            <span class="included-icon">🎯</span>
+            <h4>Posing guidance</h4>
+            <p>We direct every part of the shoot. You don't need to know what to do — that's our job.</p>
+          </div>
+          <div class="included-item">
+            <span class="included-icon">☁️</span>
+            <h4>Google Drive delivery</h4>
+            <p>Web-optimized and full hi-res versions organized by person. Ready to use immediately.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Add-ons ─────────────────────────────────────────── -->
+    <section>
+      <div class="container">
+        <span class="eyebrow">Add-Ons</span>
+        <h2 class="mt-16" style="max-width:440px">Optional extras.</h2>
+        <div class="addons-grid">
+          <div class="addon-item">
+            <div class="addon-price">$25</div>
+            <div>
+              <h4>Additional retouched image</h4>
+              <p>Corporate and LinkedIn sessions. Per image, selected after delivery.</p>
+            </div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-price">$35</div>
+            <div>
+              <h4>Additional retouched image</h4>
+              <p>Editorial modeling sessions. Per image, selected after delivery.</p>
+            </div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-price">$50</div>
+            <div>
+              <h4>Additional retouched image</h4>
+              <p>Beauty and actor sessions. Per image, selected after delivery.</p>
+            </div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-price">$50</div>
+            <div>
+              <h4>Rush delivery</h4>
+              <p>Images back within 4 hours of your session. Subject to availability — ask when booking.</p>
+            </div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-price">TBD</div>
+            <div>
+              <h4>Travel outside GTA</h4>
+              <p>We cover Greater Toronto Area. Beyond that, a travel fee applies. <a href="mailto:hi@speedyheadshots.com" style="color:var(--black);border-bottom:1px solid var(--border);">Ask us first.</a></p>
+            </div>
+          </div>
+          <div class="addon-item">
+            <div class="addon-price">TBD</div>
+            <div>
+              <h4>Advanced retouching</h4>
+              <p>Body reshaping, background replacement, or composite work. Quoted per project.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FAQ ─────────────────────────────────────────────── -->
+    <section style="background:var(--cream);">
+      <div class="container">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="mt-16">Pricing questions.</h2>
+        <div class="faq-2col">
+          <div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What's the difference between individual and team pricing?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Individual sessions ($250–$675) are priced per session for one person — the price covers the full shoot regardless of how many shots are taken. Team pricing ($125–$175/person) is per person and applies when booking 4 or more people. It includes us coming to your office and is structured for back-to-back individual shoots.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do prices include HST?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                No — all prices shown are before HST (13% in Ontario). HST is added at checkout.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I pay by invoice instead of Square?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes — for corporate team bookings we're happy to issue an invoice. Email us your headcount, preferred date, and billing details and we'll set it up. All other bookings go through Square checkout.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Is there a deposit required?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Individual sessions are paid in full at booking. For team sessions of 10 or more, a 50% deposit holds your date with the remainder due on the day of the shoot.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                What's your cancellation and refund policy?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Cancellations with 48+ hours notice: full refund or free rescheduling. 24–48 hours: 50% non-refundable. Under 24 hours: full session fee applies. Full details in our <a href="/studio-policy/" style="color:var(--black);border-bottom:1px solid currentColor;">Studio Policy</a>.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                How many retouched images do I get?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                It depends on the package — 1 image for Mini, 2 for Professional, 5 for Executive, and so on. All unretouched digital images from the entire session are always included at no extra charge. Additional retouched images can be added after delivery at $25–$50 per image.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Do you offer discounts for multiple bookings?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Team pricing already includes a volume discount compared to individual rates. For recurring corporate accounts or large multi-day shoots, reach out directly — we're happy to discuss custom pricing.
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">
+                Can I upgrade my package after booking?
+                <span class="faq-icon">+</span>
+              </button>
+              <div class="faq-answer">
+                Yes — if you decide on the day you'd like more time or looks, we can upgrade your session if the schedule allows. The price difference is charged at the studio. We recommend booking the package you think you'll need and we'll make sure you get the most from it.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ─────────────────────────────────────────────── -->
+    <section class="cta-banner" style="border-top:none;">
+      <h2>Not sure which<br><em>package is right?</em></h2>
+      <p>Email us what you need and we'll point you in the right direction — no obligation.</p>
+      <div class="cta-actions">
+        <a href="mailto:hi@speedyheadshots.com?subject=Pricing%20Question" class="btn btn-warm">Ask Us</a>
+        <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+           class="btn btn-ghost" target="_blank" rel="noopener">Book Mini — $250</a>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+  <script>
+    /* Track toggle */
+    document.querySelectorAll('.track-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.track-tab').forEach(t => {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        const target = tab.dataset.target;
+        ['track-individual','track-team'].forEach(id => {
+          document.getElementById(id).style.display = id === target ? 'block' : 'none';
+        });
+      });
+    });
+
+    /* FAQ accordion */
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!open) item.classList.add('open');
+        btn.setAttribute('aria-expanded', String(!open));
+      });
+    });
+  </script>
+
+</body>
+</html>
