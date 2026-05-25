@@ -11,65 +11,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css">
   <style>
-
-    /* ── Layout ───────────────────────────────────────────── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      min-height: calc(100vh - var(--nav-h));
+    .contact-hero {
+      padding: clamp(56px,9vw,112px) 0 clamp(40px,6vw,64px);
       border-bottom: 1px solid var(--border);
+      text-align: center;
     }
-
-    /* ── Left — form ──────────────────────────────────────── */
-    .form-panel {
-      padding: clamp(48px,8vw,96px) clamp(32px,5vw,72px);
-      border-right: 1px solid var(--border);
-    }
-    .form-panel h1 { margin-top: 14px; font-size: clamp(36px,5vw,64px); }
-    .form-panel h1 em { font-style: italic; color: var(--warm); }
-    .form-panel > p {
+    .contact-hero h1 { margin-top: 12px; }
+    .contact-hero h1 em { font-style: italic; color: var(--warm); }
+    .contact-hero p {
       margin-top: 16px;
-      font-size: 16px;
+      font-size: 17px;
       color: var(--mid);
+      max-width: 440px;
+      margin-left: auto;
+      margin-right: auto;
       line-height: 1.65;
-      max-width: 420px;
     }
 
-    /* Session type pills */
-    .session-type {
+    /* ── Direct contact buttons ───────────────────────────── */
+    .direct-contact {
       display: flex;
-      gap: 8px;
+      gap: 16px;
+      justify-content: center;
       flex-wrap: wrap;
-      margin: 32px 0 0;
+      margin-top: 36px;
     }
-    .session-type label {
-      display: flex;
+    .contact-btn {
+      display: inline-flex;
       align-items: center;
-      gap: 7px;
-      font-size: 12px;
+      gap: 10px;
+      font-size: 14px;
       font-weight: 500;
-      letter-spacing: .04em;
-      padding: 8px 16px;
+      padding: 14px 28px;
       border: 1.5px solid var(--border);
-      cursor: pointer;
-      transition: border-color .15s, background .15s;
-      user-select: none;
+      color: var(--black);
+      text-decoration: none;
+      transition: background .2s, border-color .2s, color .2s;
     }
-    .session-type input[type="radio"] { display: none; }
-    .session-type input[type="radio"]:checked + span {
-      /* handled via JS class toggle */
-    }
-    .session-type label.selected {
-      border-color: var(--warm);
-      background: var(--warm);
-      color: var(--white);
-    }
+    .contact-btn:hover { background: var(--black); color: var(--white); border-color: var(--black); }
+    .contact-btn-fill { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .contact-btn-fill:hover { background: var(--black); border-color: var(--black); }
+    .contact-btn-icon { font-size: 16px; }
 
-    /* Form fields */
-    .form-fields { margin-top: 32px; display: flex; flex-direction: column; gap: 20px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .field { display: flex; flex-direction: column; gap: 6px; }
+    /* ── Simple form ──────────────────────────────────────── */
+    .form-section { padding: clamp(56px,8vw,96px) 0; }
+    .form-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .form-wrap h2 { font-size: clamp(28px,4vw,40px); margin-bottom: 8px; }
+    .form-wrap > p { font-size: 15px; color: var(--mid); margin-bottom: 36px; line-height: 1.6; }
+
+    .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
     .field label {
       font-size: 11px;
       font-weight: 600;
@@ -85,160 +78,96 @@
       color: var(--black);
       background: var(--white);
       border: 1.5px solid var(--border);
-      padding: 12px 16px;
+      padding: 13px 16px;
       outline: none;
       transition: border-color .15s;
       width: 100%;
       border-radius: 0;
-      appearance: none;
       -webkit-appearance: none;
     }
     .field input:focus,
     .field select:focus,
     .field textarea:focus { border-color: var(--warm); }
-    .field textarea { resize: vertical; min-height: 120px; }
-    .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6560' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-    .form-submit { margin-top: 8px; }
-    .form-submit .btn {
+    .field textarea { resize: vertical; min-height: 100px; }
+    .field select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6560' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+    .submit-btn {
       width: 100%;
       justify-content: center;
       padding: 16px;
       font-size: 13px;
+      margin-top: 8px;
     }
     .form-note {
-      margin-top: 12px;
+      text-align: center;
       font-size: 12px;
       color: var(--mid);
-      text-align: center;
+      margin-top: 14px;
       line-height: 1.6;
     }
 
-    /* Success state */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 48px 24px;
-    }
-    .form-success .success-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: var(--warm);
-      color: var(--white);
-      font-size: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 20px;
-    }
-    .form-success h3 { font-size: 28px; }
-    .form-success p { font-size: 15px; color: var(--mid); margin-top: 10px; line-height: 1.65; }
-
-    /* ── Right — info ─────────────────────────────────────── */
-    .info-panel {
+    /* ── Studio info strip ────────────────────────────────── */
+    .studio-strip {
       background: var(--black);
       color: var(--white);
-      padding: clamp(48px,8vw,96px) clamp(32px,5vw,72px);
-      display: flex;
-      flex-direction: column;
+      padding: clamp(48px,7vw,80px) 0;
+      border-top: 1px solid var(--border);
+    }
+    .studio-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 48px;
     }
-
-    .info-block h3 {
-      font-size: 11px;
+    .studio-block h4 {
+      font-family: var(--font-sans);
+      font-size: 10px;
       font-weight: 600;
-      letter-spacing: .16em;
+      letter-spacing: .18em;
       text-transform: uppercase;
       color: rgba(255,255,255,.3);
       margin-bottom: 16px;
     }
-
-    /* Direct contact */
-    .contact-links { display: flex; flex-direction: column; gap: 14px; }
-    .contact-link {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    .studio-block p {
+      font-size: 15px;
+      color: rgba(255,255,255,.65);
+      line-height: 1.7;
+    }
+    .studio-block a {
+      color: rgba(255,255,255,.65);
       text-decoration: none;
-      color: var(--white);
-      font-size: 16px;
       transition: color .15s;
     }
-    .contact-link:hover { color: var(--warm); }
-    .contact-link-icon {
-      width: 40px;
-      height: 40px;
-      border: 1px solid rgba(255,255,255,.1);
+    .studio-block a:hover { color: var(--white); }
+    .hours-list { display: flex; flex-direction: column; gap: 4px; }
+    .hours-row {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-      color: var(--warm);
-    }
-
-    /* Hours */
-    .hours-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
-    .hours-row { display: flex; justify-content: space-between; font-size: 14px; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
-    .hours-row .day { color: rgba(255,255,255,.5); }
-    .hours-row .time { color: var(--white); font-weight: 500; }
-
-    /* Location */
-    .location-address {
-      font-size: 15px;
-      color: rgba(255,255,255,.7);
-      line-height: 1.65;
-    }
-    .location-address strong { color: var(--white); }
-    .directions-list { margin-top: 20px; display: flex; flex-direction: column; gap: 12px; }
-    .direction-item {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      justify-content: space-between;
       font-size: 14px;
-      color: rgba(255,255,255,.5);
-      line-height: 1.55;
+      color: rgba(255,255,255,.55);
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .direction-icon {
-      font-size: 16px;
-      flex-shrink: 0;
-      color: var(--warm);
-      margin-top: 1px;
-    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row .time { color: rgba(255,255,255,.8); }
 
-    /* Map embed */
-    .map-section { border-top: 1px solid var(--border); }
+    /* ── Map ──────────────────────────────────────────────── */
     .map-embed {
       width: 100%;
-      height: 400px;
+      height: 380px;
       border: none;
       display: block;
-      filter: grayscale(20%);
+      filter: grayscale(15%);
     }
-
-    /* ── Socials ──────────────────────────────────────────── */
-    .socials-row { display: flex; gap: 16px; }
-    .social-link {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.4);
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      text-decoration: none;
-      transition: color .15s, border-color .15s;
-    }
-    .social-link:hover { color: var(--white); border-color: var(--warm); }
 
     /* ── Responsive ───────────────────────────────────────── */
-    @media (max-width: 860px) {
-      .contact-grid { grid-template-columns: 1fr; }
-      .info-panel { border-top: 1px solid var(--border); }
-      .form-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 560px) {
-      .hours-grid { grid-template-columns: 1fr; }
+    @media (max-width: 720px) {
+      .studio-inner { grid-template-columns: 1fr; gap: 40px; }
+      .direct-contact { flex-direction: column; align-items: center; }
+      .contact-btn { width: 100%; justify-content: center; max-width: 320px; }
     }
   </style>
 </head>
@@ -248,46 +177,47 @@
 
   <main class="page-body">
 
-    <div class="contact-grid" id="location">
-
-      <!-- ── Form ──────────────────────────────────────────── -->
-      <div class="form-panel">
+    <!-- ── Hero ──────────────────────────────────────────── -->
+    <section class="contact-hero">
+      <div class="container">
         <span class="eyebrow">Get in Touch</span>
-        <h1>Let's make<br><em>great photos.</em></h1>
-        <p>Tell us what you're looking for and we'll get back to you within a few hours. Prefer to just book directly? Head to the <a href="/pricing/" style="color:var(--black);border-bottom:1px solid var(--border);">pricing page</a>.</p>
-
-        <!-- Session type selector -->
-        <div class="session-type" id="session-pills">
-          <label class="selected"><input type="radio" name="session" value="Corporate" checked><span>Corporate Team</span></label>
-          <label><input type="radio" name="session" value="LinkedIn"><span>LinkedIn</span></label>
-          <label><input type="radio" name="session" value="Actor"><span>Actor</span></label>
-          <label><input type="radio" name="session" value="Modeling"><span>Modeling</span></label>
-          <label><input type="radio" name="session" value="Other"><span>Other</span></label>
+        <h1>Let's talk<br><em>headshots.</em></h1>
+        <p>Book directly online or reach out — we reply within a few hours.</p>
+        <div class="direct-contact">
+          <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/VSCNQ2GQNDCUX4OHB6GLEZBP"
+             class="contact-btn contact-btn-fill" target="_blank" rel="noopener">
+            <span class="contact-btn-icon">📅</span> Book Online
+          </a>
+          <a href="mailto:hi@speedyheadshots.com" class="contact-btn">
+            <span class="contact-btn-icon">✉</span> hi@speedyheadshots.com
+          </a>
+          <a href="tel:13473661342" class="contact-btn">
+            <span class="contact-btn-icon">✆</span> +1 (347) 366 1342
+          </a>
         </div>
+      </div>
+    </section>
 
-        <!-- Netlify form -->
-        <form
-          id="contact-form"
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          action="/contact/thank-you/"
-        >
-          <input type="hidden" name="form-name" value="contact">
-          <input type="hidden" name="session-type" id="session-type-hidden" value="Corporate Team">
-          <p style="display:none;"><label>Don't fill this in: <input name="bot-field"></label></p>
+    <!-- ── Form ───────────────────────────────────────────── -->
+    <section class="form-section">
+      <div class="container">
+        <div class="form-wrap">
+          <h2>Send a message</h2>
+          <p>For team quotes, custom requests, or anything else — fill this in and we'll get back to you.</p>
 
-          <div class="form-fields">
-            <div class="form-row">
-              <div class="field">
-                <label for="first-name">First name</label>
-                <input type="text" id="first-name" name="first-name" placeholder="Alex" required>
-              </div>
-              <div class="field">
-                <label for="last-name">Last name</label>
-                <input type="text" id="last-name" name="last-name" placeholder="Morgan" required>
-              </div>
+          <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/contact/thank-you/"
+          >
+            <input type="hidden" name="form-name" value="contact">
+            <p style="display:none;"><label>Don't fill: <input name="bot-field"></label></p>
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Alex Morgan" required>
             </div>
 
             <div class="field">
@@ -296,159 +226,82 @@
             </div>
 
             <div class="field">
-              <label for="phone">Phone (optional)</label>
-              <input type="tel" id="phone" name="phone" placeholder="+1 (416) 000-0000">
-            </div>
-
-            <!-- Shown for Corporate -->
-            <div class="field" id="team-size-field">
-              <label for="team-size">Team size</label>
-              <select id="team-size" name="team-size">
+              <label for="session">What are you looking for?</label>
+              <select id="session" name="session-type">
                 <option value="">Select...</option>
-                <option value="4-9">4–9 people ($175/person)</option>
-                <option value="10-19">10–19 people ($150/person)</option>
-                <option value="20+">20+ people ($125/person)</option>
-                <option value="day-rate">Full day rate ($2,750 flat)</option>
+                <option value="LinkedIn / Individual">LinkedIn / Individual</option>
+                <option value="Corporate Team">Corporate Team</option>
+                <option value="Actor">Actor</option>
+                <option value="Modeling">Modeling</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="date">Preferred date (optional)</label>
-              <input type="date" id="date" name="preferred-date">
-            </div>
-
-            <div class="field">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us about your shoot — location, timing, any specific requirements..."></textarea>
+              <textarea id="message" name="message" placeholder="Tell us what you need — team size, preferred date, any questions..."></textarea>
             </div>
 
-            <div class="form-submit">
-              <button type="submit" class="btn btn-fill">Send Message</button>
-            </div>
-            <p class="form-note">We reply within a few hours during business hours. For urgent bookings call <a href="tel:13473661342" style="color:var(--black);">+1 (347) 366 1342</a>.</p>
-          </div>
-        </form>
-
-        <!-- Success message (shown after JS submit) -->
-        <div class="form-success" id="form-success">
-          <div class="success-icon">✓</div>
-          <h3>Message sent.</h3>
-          <p>We'll get back to you within a few hours. If you need to reach us sooner, call <a href="tel:13473661342" style="color:var(--black);">+1 (347) 366 1342</a>.</p>
+            <button type="submit" class="btn btn-fill submit-btn">Send Message</button>
+            <p class="form-note">We reply within a few hours during business hours.</p>
+          </form>
         </div>
       </div>
+    </section>
 
-      <!-- ── Info ───────────────────────────────────────────── -->
-      <div class="info-panel">
+    <!-- ── Studio info ─────────────────────────────────────── -->
+    <div class="studio-strip" id="location">
+      <div class="container">
+        <div class="studio-inner">
 
-        <div class="info-block">
-          <h3>Direct Contact</h3>
-          <div class="contact-links">
-            <a href="mailto:hi@speedyheadshots.com" class="contact-link">
-              <div class="contact-link-icon">✉</div>
-              hi@speedyheadshots.com
-            </a>
-            <a href="tel:13473661342" class="contact-link">
-              <div class="contact-link-icon">✆</div>
-              +1 (347) 366 1342
-            </a>
+          <div class="studio-block">
+            <h4>Studio</h4>
+            <p>
+              170 Sumach St<br>
+              Regent Park, Toronto ON<br><br>
+              <a href="https://maps.google.com/?q=170+Sumach+St+Toronto" target="_blank" rel="noopener">Get directions →</a>
+            </p>
+            <p style="margin-top:16px;font-size:14px;color:rgba(255,255,255,.4);">
+              505 streetcar — Regent Park East stop, 1-min walk.<br>
+              Paid parking in building garage on your left.
+            </p>
           </div>
-        </div>
 
-        <div class="info-block">
-          <h3>Studio Hours</h3>
-          <div class="hours-grid">
-            <div class="hours-row"><span class="day">Monday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Tuesday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Wednesday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Thursday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Friday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Saturday</span><span class="time">8am – 8pm</span></div>
-            <div class="hours-row"><span class="day">Sunday</span><span class="time">8am – 8pm</span></div>
-          </div>
-          <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.35);">Confirm your time slot before arriving — sessions must be booked in advance.</p>
-        </div>
-
-        <div class="info-block" id="location-info">
-          <h3>Studio Location</h3>
-          <p class="location-address">
-            <strong>170 Sumach St</strong><br>
-            Regent Park, Toronto ON<br>
-            Dundas St E between River St & Parliament St
-          </p>
-          <div class="directions-list">
-            <div class="direction-item">
-              <span class="direction-icon">🚋</span>
-              <span>505 streetcar — Regent Park East stop at Dundas St. 1-minute walk from the stop.</span>
+          <div class="studio-block">
+            <h4>Hours</h4>
+            <div class="hours-list">
+              <div class="hours-row"><span>Mon – Sun</span><span class="time">8am – 8pm</span></div>
             </div>
-            <div class="direction-item">
-              <span class="direction-icon">🚗</span>
-              <span>Paid parking in the building garage. Drive in, take the ramp immediately on your left. Spots on both sides.</span>
-            </div>
+            <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.3);">Sessions by appointment only — book online or email us first.</p>
           </div>
-        </div>
 
-        <div class="info-block">
-          <h3>Follow</h3>
-          <div class="socials-row">
-            <a href="https://instagram.com/speedyheadshots" target="_blank" rel="noopener" class="social-link">Instagram</a>
-            <a href="https://linkedin.com/company/speedyheadshots" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
-            <a href="https://facebook.com/speedyheadshots" target="_blank" rel="noopener" class="social-link">Facebook</a>
+          <div class="studio-block">
+            <h4>Contact</h4>
+            <p>
+              <a href="mailto:hi@speedyheadshots.com">hi@speedyheadshots.com</a><br>
+              <a href="tel:13473661342">+1 (347) 366 1342</a>
+            </p>
+            <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,.3);">Instagram · LinkedIn · Facebook<br>@speedyheadshots</p>
           </div>
-        </div>
 
+        </div>
       </div>
     </div>
 
     <!-- ── Map ─────────────────────────────────────────────── -->
-    <div class="map-section">
-      <iframe
-        class="map-embed"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.0!2d-79.3576!3d43.6571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb4d0a3d3b3d%3A0x0!2s170+Sumach+St%2C+Toronto%2C+ON!5e0!3m2!1sen!2sca!4v1620000000000"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="SpeedyHeadshots studio location — 170 Sumach St, Toronto"
-      ></iframe>
-    </div>
+    <iframe
+      class="map-embed"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.0!2d-79.3576!3d43.6571!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb4d0a3d3b3d%3A0x0!2s170+Sumach+St%2C+Toronto%2C+ON!5e0!3m2!1sen!2sca!4v1620000000000"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="SpeedyHeadshots — 170 Sumach St, Toronto"
+    ></iframe>
 
   </main>
 
   <div id="site-footer"></div>
   <script src="/components/nav.js"></script>
   <script src="/components/footer.js"></script>
-  <script>
-    /* ── Session type pills ── */
-    const pills = document.querySelectorAll('.session-type label');
-    const hiddenInput = document.getElementById('session-type-hidden');
-    const teamSizeField = document.getElementById('team-size-field');
-
-    pills.forEach(label => {
-      label.addEventListener('click', () => {
-        pills.forEach(l => l.classList.remove('selected'));
-        label.classList.add('selected');
-        const val = label.querySelector('input').value;
-        hiddenInput.value = val;
-        teamSizeField.style.display = val === 'Corporate' ? 'flex' : 'none';
-      });
-    });
-
-    /* ── Form submit (Netlify handles POST, we just show success UI) ── */
-    const form = document.getElementById('contact-form');
-    const successMsg = document.getElementById('form-success');
-
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const data = new FormData(form);
-      try {
-        await fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(data).toString() });
-        form.style.display = 'none';
-        successMsg.style.display = 'block';
-      } catch {
-        // Fallback — let native submit happen
-        form.submit();
-      }
-    });
-  </script>
-
 </body>
 </html>
