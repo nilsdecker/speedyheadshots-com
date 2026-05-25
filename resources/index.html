@@ -4,178 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Headshot Resources & Blog | SpeedyHeadshots Toronto</title>
-  <meta name="description" content="Guides, tips, and advice on professional headshots — what to wear, how to prepare, posing, pricing, and more from SpeedyHeadshots Toronto.">
+  <meta name="description" content="Guides, tips, and advice on professional headshots — what to wear, how to prepare, pricing, and more from SpeedyHeadshots Toronto.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/resources/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/styles.css">
   <style>
-    .resources-hero {
-      padding: clamp(64px, 10vw, 112px) 0 clamp(48px, 7vw, 80px);
-      border-bottom: 1px solid var(--border);
-    }
-    .resources-hero h1 { max-width: 640px; }
-    .resources-hero p { margin-top: 20px; font-size: 18px; color: var(--mid); max-width: 480px; line-height: 1.65; }
+    .resources-hero { padding: clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px); border-bottom: 1px solid var(--border); }
+    .resources-hero h1 { max-width: 560px; margin-top: 12px; }
+    .resources-hero h1 em { font-style: italic; color: var(--warm); }
+    .resources-hero p { margin-top: 16px; font-size: 17px; color: var(--mid); max-width: 480px; line-height: 1.65; }
 
-    /* Category pills */
-    .category-bar {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 36px;
-    }
-    .cat-pill {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border: 1.5px solid var(--border);
-      color: var(--mid);
-      cursor: pointer;
-      transition: background .15s, border-color .15s, color .15s;
-    }
-    .cat-pill:hover, .cat-pill.active { background: var(--black); border-color: var(--black); color: var(--white); }
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 32px; }
+    .filter-pill { font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; padding: 7px 16px; border: 1.5px solid var(--border); color: var(--mid); cursor: pointer; background: var(--white); transition: background .15s, border-color .15s, color .15s; text-decoration: none; }
+    .filter-pill:hover, .filter-pill.active { background: var(--black); border-color: var(--black); color: var(--white); }
 
-    /* Articles grid */
-    .articles-section { padding: clamp(48px, 8vw, 96px) 0; }
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 48px;
-    }
-    .article-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      transition: background .2s;
-    }
+    .articles-section { padding: clamp(48px,7vw,80px) 0; }
+    .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .article-card { background: var(--white); border: 1px solid var(--border); display: flex; flex-direction: column; text-decoration: none; transition: background .2s; }
     .article-card:hover { background: var(--cream); }
-    .article-thumb {
-      aspect-ratio: 16/9;
-      background: var(--cream);
-      overflow: hidden;
-    }
-    .article-thumb img { width: 100%; height: 100%; object-fit: cover; }
-    .article-body { padding: 28px 24px 24px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
-    .article-cat {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--warm);
-    }
-    .article-card h3 { font-size: 20px; line-height: 1.25; }
+    .article-card-img { aspect-ratio: 16/9; background: var(--cream); overflow: hidden; position: relative; }
+    .article-card-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    .article-card-img-inner { width: 100%; height: 100%; object-fit: cover; }
+    .article-card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+    .article-cat { font-size: 10px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--warm); }
+    .article-card h3 { font-size: 20px; color: var(--black); line-height: 1.2; font-family: var(--font-serif); font-weight: 400; }
     .article-card p { font-size: 14px; color: var(--mid); line-height: 1.6; flex: 1; }
-    .article-meta {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      font-size: 12px;
-      color: var(--mid);
-    }
+    .article-meta { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); font-size: 12px; color: var(--mid); }
 
-    @media (max-width: 900px) { .articles-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 560px) { .articles-grid { grid-template-columns: 1fr; } }
+    /* Featured article */
+    .article-featured { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; border: 1.5px solid var(--black); }
+    .article-featured .article-card-img { aspect-ratio: auto; min-height: 280px; }
+    .article-featured .article-card-body { padding: 40px; justify-content: center; }
+    .article-featured h3 { font-size: 32px; }
+    .article-featured .article-cat { font-size: 11px; }
+
+    @media (max-width: 900px) {
+      .articles-grid { grid-template-columns: 1fr 1fr; }
+      .article-featured { grid-template-columns: 1fr; }
+      .article-featured .article-card-img { min-height: 200px; }
+    }
+    @media (max-width: 560px) {
+      .articles-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <div id="site-nav"></div>
-
   <main class="page-body">
 
-    <section class="resources-hero" style="padding-bottom:0;border:none;">
+    <section class="resources-hero">
       <div class="container">
         <span class="eyebrow">Resources</span>
-        <h1>Headshot guides,<br><em class="serif" style="font-style:italic">done plainly.</em></h1>
+        <h1>Headshot guides,<br><em>done plainly.</em></h1>
         <p>What to wear, how to prepare, what to expect, and how to get the most from your session — no fluff.</p>
-        <div class="category-bar">
-          <button class="cat-pill active">All</button>
-          <button class="cat-pill">Preparation</button>
-          <button class="cat-pill">Pricing</button>
-          <button class="cat-pill">Style & Wardrobe</button>
-          <button class="cat-pill">Actor Headshots</button>
-          <button class="cat-pill">Corporate</button>
-          <button class="cat-pill">LinkedIn</button>
+        <div class="filter-bar">
+          <a href="#" class="filter-pill active" data-cat="all">All</a>
+          <a href="#" class="filter-pill" data-cat="choosing">Choosing a Photographer</a>
+          <a href="#" class="filter-pill" data-cat="pricing">Pricing</a>
+          <a href="#" class="filter-pill" data-cat="preparation">Preparation</a>
+          <a href="#" class="filter-pill" data-cat="linkedin">LinkedIn</a>
+          <a href="#" class="filter-pill" data-cat="actor">Actor</a>
+          <a href="#" class="filter-pill" data-cat="corporate">Corporate</a>
         </div>
       </div>
     </section>
 
     <section class="articles-section">
       <div class="container">
-        <!-- TODO: Replace with CMS-driven articles -->
-        <div class="articles-grid">
-          <a href="/resources/what-to-wear-for-headshots/" class="article-card">
-            <div class="article-thumb" style="background:#e5e0d8;"></div>
-            <div class="article-body">
-              <span class="article-cat">Style & Wardrobe</span>
+        <div class="articles-grid" id="articles-grid">
+
+          <!-- Featured -->
+          <a href="/resources/best-headshot-photographers-toronto/" class="article-card article-featured" data-cat="choosing">
+            <div class="article-card-img" style="background:linear-gradient(135deg,#1B3F7A 0%,#0d2040 100%);display:flex;align-items:center;justify-content:center;">
+              <span style="font-family:var(--font-serif);font-size:48px;font-weight:300;color:rgba(255,255,255,.15)">01</span>
+            </div>
+            <div class="article-card-body">
+              <div class="article-cat">Choosing a Photographer</div>
+              <h3>Best Headshot Photographers in Toronto (2026)</h3>
+              <p>Honest breakdown of Toronto's top headshot studios — corporate, LinkedIn, actor, and modeling. Who's worth hiring, what they charge, and when to pick which one.</p>
+              <div class="article-meta"><span>Updated May 2026</span><span>8 min read</span></div>
+            </div>
+          </a>
+
+          <a href="/resources/how-much-do-headshots-cost-toronto/" class="article-card" data-cat="pricing">
+            <div class="article-card-img" style="background:#e8e3dc;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">Pricing</div>
+              <h3>How Much Do Headshots Cost in Toronto?</h3>
+              <p>Honest breakdown of 2026 pricing — individual sessions, teams, actors, and modeling. What's included, what's not, and what to watch out for.</p>
+              <div class="article-meta"><span>Updated May 2026</span><span>6 min read</span></div>
+            </div>
+          </a>
+
+          <a href="/resources/what-to-wear-for-headshots/" class="article-card" data-cat="preparation">
+            <div class="article-card-img" style="background:#dbd5cd;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">Style & Wardrobe</div>
               <h3>What to Wear for Your Headshot Session</h3>
               <p>Colours, fits, patterns, and the one mistake almost everyone makes. A plain-language guide.</p>
-              <div class="article-meta">5 min read</div>
+              <div class="article-meta"><span>Updated May 2026</span><span>5 min read</span></div>
             </div>
           </a>
-          <a href="/resources/how-to-prepare-for-headshots/" class="article-card">
-            <div class="article-thumb" style="background:#dbd5cd;"></div>
-            <div class="article-body">
-              <span class="article-cat">Preparation</span>
+
+          <a href="/resources/how-to-prepare-for-headshots/" class="article-card" data-cat="preparation">
+            <div class="article-card-img" style="background:#d2ccc5;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">Preparation</div>
               <h3>How to Prepare for a Headshot Session</h3>
               <p>Sleep, skincare, hair, and what to do in the 24 hours before you arrive.</p>
-              <div class="article-meta">4 min read</div>
+              <div class="article-meta"><span>Updated May 2026</span><span>4 min read</span></div>
             </div>
           </a>
-          <a href="/resources/headshot-pricing-toronto/" class="article-card">
-            <div class="article-thumb" style="background:#d0cbc3;"></div>
-            <div class="article-body">
-              <span class="article-cat">Pricing</span>
-              <h3>Headshot Pricing in Toronto: What to Expect</h3>
-              <p>What's included in a standard headshot package, what costs extra, and how to compare quotes.</p>
-              <div class="article-meta">6 min read</div>
-            </div>
-          </a>
-          <a href="/resources/best-headshots-for-linkedin/" class="article-card">
-            <div class="article-thumb" style="background:#ccc7bf;"></div>
-            <div class="article-body">
-              <span class="article-cat">LinkedIn</span>
+
+          <a href="/resources/best-headshots-for-linkedin/" class="article-card" data-cat="linkedin">
+            <div class="article-card-img" style="background:#c9c3bc;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">LinkedIn</div>
               <h3>What Makes a Great LinkedIn Headshot</h3>
-              <p>The specific elements that make profiles get noticed — background choice, expression, framing.</p>
-              <div class="article-meta">5 min read</div>
+              <p>The specific elements that make profiles get noticed — expression, background, framing, lighting.</p>
+              <div class="article-meta"><span>Updated May 2026</span><span>5 min read</span></div>
             </div>
           </a>
-          <a href="/resources/actor-headshots-guide/" class="article-card">
-            <div class="article-thumb" style="background:#c5c0b8;"></div>
-            <div class="article-body">
-              <span class="article-cat">Actor Headshots</span>
+
+          <a href="/resources/actor-headshots-guide/" class="article-card" data-cat="actor">
+            <div class="article-card-img" style="background:#1a1a1a;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">Actor Headshots</div>
               <h3>The Actor Headshot Guide for Toronto</h3>
-              <p>Submissions, casting director preferences, what agencies actually look for, and how to stand out.</p>
-              <div class="article-meta">7 min read</div>
+              <p>Casting director preferences, how many headshots you need, wardrobe, backgrounds, and choosing a photographer.</p>
+              <div class="article-meta"><span>Updated May 2026</span><span>7 min read</span></div>
             </div>
           </a>
-          <a href="/resources/corporate-headshot-day-planning/" class="article-card">
-            <div class="article-thumb" style="background:#bdb8b0;"></div>
-            <div class="article-body">
-              <span class="article-cat">Corporate</span>
+
+          <a href="/resources/corporate-headshot-day-planning/" class="article-card" data-cat="corporate">
+            <div class="article-card-img" style="background:#1B3F7A;"></div>
+            <div class="article-card-body">
+              <div class="article-cat">Corporate</div>
               <h3>Planning a Company-Wide Headshot Day</h3>
               <p>How to schedule, brief your team, and make a 40-person shoot day run without chaos.</p>
-              <div class="article-meta">6 min read</div>
+              <div class="article-meta"><span>Updated May 2026</span><span>6 min read</span></div>
             </div>
           </a>
+
         </div>
       </div>
     </section>
 
   </main>
-
   <div id="site-footer"></div>
   <script src="/components/nav.js"></script>
   <script src="/components/footer.js"></script>
   <script>
-    document.querySelectorAll('.cat-pill').forEach(pill => {
-      pill.addEventListener('click', () => {
-        document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    const pills = document.querySelectorAll('.filter-pill');
+    const cards = document.querySelectorAll('.article-card');
+    pills.forEach(pill => {
+      pill.addEventListener('click', e => {
+        e.preventDefault();
+        pills.forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
-        /* TODO: wire up category filtering when CMS is connected */
+        const cat = pill.dataset.cat;
+        cards.forEach(card => {
+          card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+        });
       });
     });
   </script>
