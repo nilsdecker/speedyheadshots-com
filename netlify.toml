@@ -215,13 +215,11 @@
   from = "/contact"
   to = "/contact/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/pricing"
   to = "/pricing/"
   status = 301
-  force = true
 
 [[redirects]]
   from = "/retouching"
