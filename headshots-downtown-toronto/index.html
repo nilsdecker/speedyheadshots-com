@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Headshot Photographer Downtown Toronto | SpeedyHeadshots</title>
+  <meta name="description" content="Professional headshot photographer in Downtown Toronto. Corporate teams, LinkedIn, actor, and modeling headshots. We come to your office. 24-hour delivery.">
+  <link rel="canonical" href="https://www.speedyheadshots.com/headshots-downtown-toronto/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SpeedyHeadshots",
+    "description": "Professional headshot photographer serving Downtown Toronto.",
+    "url": "https://www.speedyheadshots.com/headshots-downtown-toronto/",
+    "telephone": "+13473661342",
+    "email": "hi@speedyheadshots.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "170 Sumach St",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "areaServed": "Downtown Toronto",
+    "priceRange": "$$"
+  }
+  </script>
+  <style>
+    .loc-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(90vh - var(--nav-h));
+      border-bottom: 1px solid var(--border);
+    }
+    .loc-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px,8vw,96px) var(--gutter);
+      padding-right: clamp(24px,4vw,56px);
+    }
+    .loc-copy h1 { margin-top: 14px; }
+    .loc-copy h1 em { font-style: italic; color: var(--warm); }
+    .loc-copy p { margin-top: 18px; font-size: 17px; color: var(--mid); max-width: 420px; line-height: 1.7; }
+    .loc-proof {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .proof-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 7px 14px;
+      border: 1.5px solid var(--border);
+      color: var(--mid);
+    }
+    .proof-pill::before { content: '✓'; color: var(--warm); font-size: 11px; }
+    .loc-actions { display: flex; gap: 14px; margin-top: 32px; flex-wrap: wrap; }
+    .loc-image { overflow: hidden; background: var(--cream); position: relative; }
+    .loc-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .loc-stats {
+      background: var(--warm);
+      color: var(--white);
+      padding: clamp(28px,4vw,48px) 0;
+    }
+    .stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(24px,4vw,56px);
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-item strong {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 40px;
+      font-weight: 300;
+      line-height: 1;
+    }
+    .stat-item span {
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .75;
+    }
+    .stat-divider { width: 1px; height: 40px; background: rgba(255,255,255,.25); flex-shrink: 0; }
+
+    .how-section { padding: clamp(56px,8vw,96px) 0; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .step-card { background: var(--white); padding: 36px 28px; }
+    .step-num { font-family: var(--font-serif); font-size: 48px; font-weight: 300; color: var(--cream); line-height: 1; margin-bottom: 12px; }
+    .step-card h3 { font-size: 20px; margin-bottom: 10px; }
+    .step-card p { font-size: 14px; color: var(--mid); line-height: 1.7; }
+
+    .pricing-section { background: var(--cream); padding: clamp(56px,8vw,96px) 0; }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 48px;
+    }
+    .p-card { border: 1.5px solid var(--border); padding: 36px 28px; background: var(--white); position: relative; }
+    .p-card.featured { border-color: var(--black); background: var(--black); color: var(--white); }
+    .p-badge { position: absolute; top: -1px; right: 24px; background: var(--warm); color: var(--white); font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; padding: 5px 12px; }
+    .p-tier { font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--mid); margin-bottom: 4px; }
+    .p-card.featured .p-tier { color: rgba(255,255,255,.4); }
+    .p-desc { font-size: 13px; color: var(--mid); }
+    .p-card.featured .p-desc { color: rgba(255,255,255,.4); }
+    .p-price { font-family: var(--font-serif); font-size: 52px; font-weight: 300; line-height: 1; margin: 18px 0 4px; }
+    .p-unit { font-size: 12px; color: var(--mid); }
+    .p-card.featured .p-unit { color: rgba(255,255,255,.4); }
+    .p-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+    .p-card.featured .p-divider { border-color: rgba(255,255,255,.12); }
+    .p-list { display: flex; flex-direction: column; gap: 8px; }
+    .p-list li { font-size: 13px; color: var(--mid); padding-left: 16px; position: relative; line-height: 1.4; }
+    .p-card.featured .p-list li { color: rgba(255,255,255,.55); }
+    .p-list li::before { content: '—'; position: absolute; left: 0; color: var(--warm); font-size: 11px; }
+    .p-card .btn { width: 100%; justify-content: center; margin-top: 24px; font-size: 12px; }
+    .p-card.featured .btn { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .p-card.featured .btn:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+
+    .neighbourhoods-section { padding: clamp(48px,6vw,72px) 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .n-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .n-item {
+      padding: 20px 24px;
+      border: 1px solid var(--border);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--black);
+    }
+    .n-item span { display: block; font-size: 12px; color: var(--mid); font-weight: 400; margin-top: 4px; }
+
+    .nearby-section { padding: clamp(40px,5vw,64px) 0; background: var(--cream); }
+    .nearby-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+    .nearby-pill {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 10px 20px;
+      border: 1.5px solid var(--border);
+      color: var(--black);
+      text-decoration: none;
+      transition: background .15s, border-color .15s, color .15s;
+    }
+    .nearby-pill:hover { background: var(--black); border-color: var(--black); color: var(--white); }
+
+    .cta-banner { background: var(--black); color: var(--white); text-align: center; padding: clamp(64px,10vw,96px) var(--gutter); }
+    .cta-banner h2 { color: var(--white); }
+    .cta-banner h2 em { color: var(--warm); font-style: italic; }
+    .cta-banner p { color: rgba(255,255,255,.5); margin-top: 14px; font-size: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+    .cta-actions .btn { padding: 14px 32px; }
+    .cta-actions .btn-warm { background: var(--warm); border-color: var(--warm); color: var(--white); }
+    .cta-actions .btn-warm:hover { background: var(--white); border-color: var(--white); color: var(--black); }
+    .cta-actions .btn-ghost { border-color: rgba(255,255,255,.3); color: var(--white); }
+    .cta-actions .btn-ghost:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+
+    @media (max-width: 900px) {
+      .loc-hero { grid-template-columns: 1fr; min-height: auto; }
+      .loc-image { height: 55vw; min-height: 280px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+      .n-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .n-grid { grid-template-columns: 1fr; }
+      .stat-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div id="site-nav"></div>
+  <main class="page-body">
+
+    <section class="loc-hero" style="padding:0;border-top:none;">
+      <div class="loc-copy">
+        <span class="eyebrow">Headshot Photographer Downtown Toronto</span>
+        <h1>Headshot Photographer<br><em>Downtown Toronto.</em></h1>
+        <p>We photograph corporate teams, executives, and individuals across Downtown Toronto — from the Financial District to King West. We bring the studio to your office, no travel fee, 24-hour delivery.</p>
+        <div class="loc-proof">
+          <span class="proof-pill">No travel fee — Downtown Toronto</span>
+          <span class="proof-pill">24h turnaround</span>
+          <span class="proof-pill">~20 min per person</span>
+          <span class="proof-pill">From $125/person (teams)</span>
+        </div>
+        <div class="loc-actions">
+          <a href="mailto:hi@speedyheadshots.com?subject=Headshot%20Enquiry%20Downtown%20Toronto" class="btn btn-fill">Get a Quote</a>
+          <a href="/pricing/" class="btn">See Pricing</a>
+        </div>
+      </div>
+      <div class="loc-image">
+        <img src="https://cloud-1de12d.becdn.net/media/original/wp-6ed1f2792b2b2fada5205ddb6103cb2b/image.jpg"
+             alt="Professional headshot photographer Downtown Toronto" loading="eager">
+      </div>
+    </section>
+
+    <div class="loc-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-item"><strong>24h</strong><span>Delivery</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>20+</strong><span>Yrs experience</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>61MP</strong><span>Sony full-frame</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>$0</strong><span>Travel fee (Downtown Toronto)</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="how-section">
+      <div class="container">
+        <span class="eyebrow">How It Works</span>
+        <h2 class="mt-16" style="max-width:480px">Simple process.<br><em class="serif" style="font-style:italic">Great results.</em></h2>
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>Book online or email us</h3>
+            <p>Tell us your team size, preferred date, and Downtown Toronto location. We confirm availability and send a quote within a few hours.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>We come to you</h3>
+            <p>We arrive with a full portable studio — lights, backdrop, tethered laptop. Your team walks in one at a time. No one needs to leave the building.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>Images in 24 hours</h3>
+            <p>Retouched images delivered via Google Drive — web-optimized and full hi-res versions, organized by person. Ready to use the same day.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+      <div class="container">
+        <span class="eyebrow">Team Pricing</span>
+        <h2 class="mt-16">Per person, no hidden fees.</h2>
+        <p style="margin-top:12px;font-size:16px;color:var(--mid);max-width:520px;">Travel to Downtown Toronto included. All rates include full studio setup, ~20 min per person, 1 retouched image, and Google Drive delivery.</p>
+        <div class="pricing-grid">
+          <div class="p-card">
+            <div class="p-tier">Startup</div>
+            <p class="p-desc">4–9 team members</p>
+            <div class="p-price">$175</div>
+            <p class="p-unit">per person + HST</p>
+            <hr class="p-divider">
+            <ul class="p-list">
+              <li>~20 min per person</li>
+              <li>We come to your Downtown Toronto office</li>
+              <li>1 retouched image per person</li>
+              <li>24h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/7GHXUGJ2Y36EJUTDGMNKKBY6"
+               class="btn" target="_blank" rel="noopener">Book Startup</a>
+          </div>
+          <div class="p-card featured">
+            <div class="p-badge">Most Popular</div>
+            <div class="p-tier">Business</div>
+            <p class="p-desc">10–19 team members</p>
+            <div class="p-price">$150</div>
+            <p class="p-unit">per person + HST</p>
+            <hr class="p-divider">
+            <ul class="p-list">
+              <li>~20 min per person</li>
+              <li>We come to your Downtown Toronto office</li>
+              <li>1 retouched image per person</li>
+              <li>24h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/IBANQN5KXDO2CHL7GQWBVCNX"
+               class="btn" target="_blank" rel="noopener">Book Business</a>
+          </div>
+          <div class="p-card">
+            <div class="p-tier">Enterprise</div>
+            <p class="p-desc">20+ team members</p>
+            <div class="p-price">$125</div>
+            <p class="p-unit">per person + HST</p>
+            <hr class="p-divider">
+            <ul class="p-list">
+              <li>~20 min per person</li>
+              <li>We come to your Downtown Toronto office</li>
+              <li>1 retouched image per person</li>
+              <li>48h delivery</li>
+            </ul>
+            <a href="https://checkout.square.site/merchant/MLD36FQQEHVHK/checkout/MFBRQ7ZKZ6OEFM7FP4FTAZWN"
+               class="btn" target="_blank" rel="noopener">Book Enterprise</a>
+          </div>
+        </div>
+        <p style="margin-top:18px;font-size:13px;color:var(--mid);text-align:center;">Individual sessions also available — <a href="/pricing/" style="color:var(--black);border-bottom:1px solid var(--border);">see full pricing →</a></p>
+      </div>
+    </section>
+
+    <section class="neighbourhoods-section">
+      <div class="container">
+        <span class="eyebrow">Areas We Cover in Downtown Toronto</span>
+        <h2 class="mt-16" style="max-width:440px">We shoot across<br><em class="serif" style="font-style:italic">Downtown Toronto.</em></h2>
+        <div class="n-grid">
+          <div class="n-item">Financial District<span>Bay St, King St W, TD Centre area</span></div><div class="n-item">King West<span>Liberty Village, Queen West</span></div><div class="n-item">Yorkville<span>Bloor St, Bay-Bloor corridor</span></div><div class="n-item">Entertainment District<span>John St, Spadina Ave</span></div><div class="n-item">Distillery District<span>Cherry St, Parliament St</span></div><div class="n-item">Waterfront<span>Queens Quay, Harbourfront</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="nearby-section">
+      <div class="container">
+        <span class="eyebrow">Also Serving</span>
+        <h2 class="mt-16" style="font-size:clamp(22px,3vw,36px);">Looking for headshots in a nearby area?</h2>
+        <div class="nearby-pills"><a href="/headshots-midtown-toronto/" class="nearby-pill">Midtown Toronto →</a><a href="/headshots-north-york/" class="nearby-pill">North York →</a><a href="/headshots-mississauga/" class="nearby-pill">Mississauga →</a><a href="/headshots-etobicoke/" class="nearby-pill">Etobicoke →</a></div>
+      </div>
+    </section>
+
+    <section class="cta-banner" style="border-top:none;">
+      <h2>Need headshots in<br><em>Downtown Toronto?</em></h2>
+      <p>Email us your headcount and preferred date. We'll confirm and quote within a few hours.</p>
+      <div class="cta-actions">
+        <a href="mailto:hi@speedyheadshots.com?subject=Headshot%20Enquiry%20Downtown%20Toronto" class="btn btn-warm">Get a Quote</a>
+        <a href="/contact/" class="btn btn-ghost">Contact Us</a>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script src="/components/nav.js"></script>
+  <script src="/components/footer.js"></script>
+</body>
+</html>
