@@ -13,7 +13,7 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans:  'DM Sans', system-ui, sans-serif;
 
-  --nav-h: 100px;
+  --nav-h: 110px;
   --max:   1200px;
   --gutter: clamp(24px, 5vw, 64px);
 
@@ -103,6 +103,8 @@ section + section { border-top: 1px solid var(--border); }
 }
 #site-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.06); }
 .nav-inner {
+  padding-top: 16px;
+  padding-bottom: 8px;
   height: 100%;
   display: flex;
   align-items: center;
