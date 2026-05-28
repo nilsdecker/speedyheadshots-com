@@ -110,13 +110,13 @@ section + section { border-top: 1px solid var(--border); }
   gap: 32px;
 }
 .nav-logo {
-  font-family: var(--font-serif);
-  font-size: 22px;
-  letter-spacing: -.01em;
-  white-space: nowrap;
+  display: flex;
+  align-items: center;
   flex-shrink: 0;
+  text-decoration: none;
 }
-.nav-logo span { color: var(--warm); }
+.nav-logo svg { display: block; }
+.nav-logo span { display: none; }
 .nav-links {
   display: flex;
   align-items: center;

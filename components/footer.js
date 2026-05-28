@@ -14,7 +14,13 @@
       <div class="footer-grid">
 
         <div class="footer-brand">
-          <div class="nav-logo">Speedy<span style="color:var(--warm)">Headshots</span></div>
+          <div class="nav-logo">
+            <svg width="180" height="30" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" aria-label="SpeedyHeadshots">
+              <text font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="200" font-size="44"
+                fill="#FAFAF8" x="350" y="70" text-anchor="middle" letter-spacing="7">Speedy Headshots</text>
+              <path d="M 112,83.5 C 200,80.5 320,79.5 588,84.5 L 588,85 C 320,81.5 200,83 112,87 Z" fill="#F56B3F"/>
+            </svg>
+          </div>
           <p>Toronto's headshot studio. Professional photos for executives, LinkedIn profiles, actors, and models. 24-hour delivery. Studio in Regent Park.</p>
           <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,.4);">
             170 Sumach St, Toronto ON<br>
