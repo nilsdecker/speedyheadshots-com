@@ -1,14 +1,13 @@
+functionsDirectory = "/mnt/user-data/outputs/speedyheadshots/netlify/functions"
+functionsDirectoryOrigin = "config-v1"
 redirectsOrigin = "config"
 plugins = []
 headers = []
 
-[functions]
-
-[functions."*"]
-
 [build]
 publish = "/mnt/user-data/outputs/speedyheadshots"
 publishOrigin = "config"
+functions = "/mnt/user-data/outputs/speedyheadshots/netlify/functions"
 
 [build.environment]
 
@@ -23,6 +22,11 @@ publishOrigin = "config"
 [build.processing.js]
 
 [build.services]
+
+[functions]
+
+[functions."*"]
+node_bundler = "esbuild"
 
 [[redirects]]
 from = "/actor-headshots-toronto"
