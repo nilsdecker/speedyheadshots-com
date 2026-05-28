@@ -11,7 +11,7 @@
     <div class="container">
       <div class="nav-inner">
         <a href="/" class="nav-logo" aria-label="SpeedyHeadshots — Home">
-          <svg width="200" height="34" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <svg width="320" height="55" viewBox="0 0 700 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <text font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-weight="200" font-size="44"
               fill="#292929" x="350" y="70" text-anchor="middle" letter-spacing="7">Speedy Headshots</text>
             <path d="M 112,83.5 C 200,80.5 320,79.5 588,84.5 L 588,85 C 320,81.5 200,83 112,87 Z" fill="#F56B3F"/>
