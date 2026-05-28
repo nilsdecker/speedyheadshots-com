@@ -2,44 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Core pages -->
-  <url><loc>https://www.speedyheadshots.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://www.speedyheadshots.com/corporate/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/linkedin/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/actor/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/model/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/pricing/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/studio-policy/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://speedyheadshots.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://speedyheadshots.com/corporate/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/linkedin/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/actor/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/model/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/pricing/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/contact/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/studio-policy/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 
   <!-- Gallery -->
-  <url><loc>https://www.speedyheadshots.com/gallery/corporate/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/gallery/modeling/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/gallery/actor/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/gallery/corporate/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/gallery/modeling/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/gallery/actor/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 
   <!-- Resources / Blog -->
-  <url><loc>https://www.speedyheadshots.com/resources/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Location pages -->
-  <url><loc>https://www.speedyheadshots.com/headshots-downtown-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/headshots-financial-district-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/headshots-north-york/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/headshots-mississauga/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/headshots-etobicoke/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/headshots-midtown-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-downtown-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-financial-district-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-north-york/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-mississauga/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-etobicoke/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/headshots-midtown-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Blog articles (existing SEO value — preserved at new URLs) -->
-  <url><loc>https://www.speedyheadshots.com/resources/best-headshot-photographers-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/how-much-do-headshots-cost-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/what-to-wear-for-headshots/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/how-to-prepare-for-headshots/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/best-headshots-for-linkedin/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/actor-headshots-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/corporate-headshot-day-planning/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/are-professional-headshots-worth-it/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/headshot-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/professional-headshots-types/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/realtor-headshots-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/startup-headshots-toronto/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.speedyheadshots.com/resources/headshot-pricing-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/best-headshot-photographers-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/how-much-do-headshots-cost-toronto/</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/what-to-wear-for-headshots/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/how-to-prepare-for-headshots/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/best-headshots-for-linkedin/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/actor-headshots-guide/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/corporate-headshot-day-planning/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/are-professional-headshots-worth-it/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/headshot-tips/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/professional-headshots-types/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/realtor-headshots-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/startup-headshots-toronto/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://speedyheadshots.com/resources/headshot-pricing-toronto/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
 </urlset>

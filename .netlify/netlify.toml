@@ -436,7 +436,7 @@ force = true
 from = "/contact"
 to = "/contact/"
 status = 301.0
-force = true
+force = false
 
 [redirects.query]
 
@@ -448,7 +448,7 @@ force = true
 from = "/pricing"
 to = "/pricing/"
 status = 301.0
-force = true
+force = false
 
 [redirects.query]
 
